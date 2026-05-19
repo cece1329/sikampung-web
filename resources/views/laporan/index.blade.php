@@ -13,6 +13,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
     <style>
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
@@ -172,7 +174,7 @@
 
                 <p class="text-base md:text-lg text-slate-200 leading-relaxed mb-8 max-w-xl">
 
-                    Melayani masyarakat dengan sistem informasi terpadu untuk lingkungan yang lebih modern,
+                    Melayani masyarakat dengan sistem info terpadu untuk lingkungan yang lebih modern,
                     transparan, dan berbudaya. Platform Pengaduan kerusakan fasilitas kampung.
 
                 </p>
@@ -556,26 +558,38 @@
 
                         </div>
 
-                        <p class="text-slate-400 text-sm leading-relaxed">
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
                             Portal pelayanan digital Kelurahan Joyotakan untuk pelayanan masyarakat modern.
                         </p>
+
+                        <div class="flex items-center gap-3">
+    <a href="https://instagram.com/kelurahanjoyotakan" target="_blank" rel="noopener noreferrer" 
+        class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:bg-gradient-to-tr hover:from-amber-500 hover:via-pink-600 hover:to-purple-600 hover:text-white hover:border-transparent transition-all duration-300 group">
+        <i class="bi bi-instagram text-lg group-hover:scale-110 transition"></i>
+    </a>
+    
+    <a href="https://wa.me/6289540164305" target="_blank" rel="noopener noreferrer" 
+        class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:bg-emerald-600 hover:text-white hover:border-emerald-500 transition-all duration-300 group">
+        <i class="bi bi-whatsapp text-lg group-hover:scale-110 transition"></i>
+    </a>
+</div>
 
                     </div>
 
                     <div>
 
-    <h3 class="font-bold text-lg mb-5">
-        Informasi
-    </h3>
+                        <h3 class="font-bold text-lg mb-5">
+                            Informasi
+                        </h3>
 
-    <ul class="space-y-3 text-sm text-slate-400">
-        <li><a href="https://kel-joyotakan.surakarta.go.id/" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400 transition">Profil Kelurahan</a></li>
-        <li><a href="#tutorial" class="hover:text-blue-400 transition">Pelayanan Masyarakat</a></li>
-        <li><a href="#statistik" class="hover:text-blue-400 transition">Pengaduan Warga</a></li>
-        <li><a href="#berita" class="hover:text-blue-400 transition">Kegiatan RW</a></li>
-    </ul>
+                        <ul class="space-y-3 text-sm text-slate-400">
+                            <li><a href="https://kel-joyotakan.surakarta.go.id/" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400 transition">Profil Kelurahan</a></li>
+                            <li><a href="#tutorial" class="hover:text-blue-400 transition">Pelayanan Masyarakat</a></li>
+                            <li><a href="#statistik" class="hover:text-blue-400 transition">Pengaduan Warga</a></li>
+                            <li><a href="#berita" class="hover:text-blue-400 transition">Kegiatan RW</a></li>
+                        </ul>
 
-</div>
+                    </div>
 
                     <div>
 
