@@ -83,15 +83,14 @@
 
 </script>
 
-<body class="bg-batik text-slate-900">
+<body class="bg-batik text-slate-900" id="profil">
 
-    <!-- NAVBAR -->
     <nav class="fixed w-full z-50 bg-white/70 backdrop-blur-md border-b border-slate-200">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
             <div class="flex items-center gap-3">
                 <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg">
-                    <span class="text-white font-bold text-lg italic">J</span>
+                    <span class="text-white font-bold text-lg italic">S</span>
                 </div>
                 <span class="text-lg md:text-xl font-black tracking-tight uppercase">
                     Si <span class="text-blue-600">Kampung</span>
@@ -131,7 +130,6 @@
         </div>
     </nav>
 
-    <!-- HERO -->
     <header class="relative min-h-screen flex items-center overflow-hidden">
 
         <div class="absolute inset-0 z-0">
@@ -210,7 +208,6 @@
 
         </div>
 
-        <!-- TEKS BERJALAN -->
         <div class="absolute bottom-8 left-0 w-full overflow-hidden opacity-15 pointer-events-none">
 
             <div class="marquee-text text-[3vw] md:text-[2vw] font-black text-white uppercase italic tracking-wider">
@@ -224,10 +221,8 @@
 
     </header>
 
-    <!-- TUTORIAL -->
     <section id="tutorial" class="py-24 px-6 relative">
 
-        <!-- KOTAK PUTIH -->
         <div
             class="max-w-7xl mx-auto bg-white/80 backdrop-blur-md rounded-[3rem] p-10 md:p-16 border border-white/70 shadow-[0_20px_60px_rgba(0,0,0,0.06)]">
 
@@ -251,7 +246,6 @@
 
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
 
-                <!-- STEP 1 -->
                 <div class="glass-card rounded-[2rem] p-8 shadow-xl relative overflow-hidden" data-aos="zoom-in">
 
                     <div class="absolute top-0 right-0 w-28 h-28 bg-blue-100 rounded-full blur-3xl opacity-60">
@@ -272,7 +266,6 @@
 
                 </div>
 
-                <!-- STEP 2 -->
                 <div class="glass-card rounded-[2rem] p-8 shadow-xl relative overflow-hidden" data-aos="zoom-in"
                     data-aos-delay="100">
 
@@ -294,7 +287,6 @@
 
                 </div>
 
-                <!-- STEP 3 -->
                 <div class="glass-card rounded-[2rem] p-8 shadow-xl relative overflow-hidden" data-aos="zoom-in"
                     data-aos-delay="200">
 
@@ -316,7 +308,6 @@
 
                 </div>
 
-                <!-- STEP 4 -->
                 <div class="glass-card rounded-[2rem] p-8 shadow-xl relative overflow-hidden" data-aos="zoom-in"
                     data-aos-delay="300">
 
@@ -344,10 +335,8 @@
 
     </section>
 
-    <!-- STATISTIK -->
     <section id="statistik" class="py-20 px-6 relative z-10">
 
-        <!-- KOTAK PUTIH -->
         <div
             class="max-w-7xl mx-auto bg-white/80 backdrop-blur-md rounded-[3rem] p-10 md:p-16 border border-white/70 shadow-[0_20px_60px_rgba(0,0,0,0.06)]">
 
@@ -428,10 +417,8 @@
 
     </section>
 
-    <!-- BERITA -->
     <section id="berita" class="py-20 px-6">
 
-        <!-- KOTAK PUTIH -->
         <div
             class="max-w-7xl mx-auto bg-white/80 backdrop-blur-md rounded-[3rem] p-10 md:p-16 border border-white/70 shadow-[0_20px_60px_rgba(0,0,0,0.06)]">
 
@@ -447,7 +434,6 @@
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
-                <!-- BERITA 1 -->
                 <div class="group glass-card overflow-hidden rounded-[2rem] shadow-xl">
 
                     <div class="h-56 overflow-hidden">
@@ -475,7 +461,6 @@
 
                 </div>
 
-                <!-- BERITA 2 -->
                 <div class="group glass-card overflow-hidden rounded-[2rem] shadow-xl">
 
                     <div class="h-56 overflow-hidden">
@@ -503,7 +488,6 @@
 
                 </div>
 
-                <!-- BERITA 3 -->
                 <div class="group glass-card overflow-hidden rounded-[2rem] shadow-xl">
 
                     <div class="h-56 overflow-hidden">
@@ -537,7 +521,6 @@
 
     </section>
 
-    <!-- FOOTER -->
     <footer class="relative bg-slate-950 text-white overflow-hidden">
 
         <div class="absolute inset-0 opacity-5 flex items-center justify-center">
@@ -562,13 +545,13 @@
                                 class="w-12 h-12 bg-blue-600 rounded-2xl flex items-center justify-center shadow-2xl shadow-blue-600/50">
 
                                 <span class="text-white font-bold text-2xl italic">
-                                    J
+                                    S
                                 </span>
 
                             </div>
 
                             <span class="text-2xl font-black tracking-tight uppercase">
-                                Joyotakan <span class="text-blue-500">Digital</span>
+                                Si <span class="text-blue-500">Kampung</span>
                             </span>
 
                         </div>
@@ -581,18 +564,18 @@
 
                     <div>
 
-                        <h3 class="font-bold text-lg mb-5">
-                            Informasi
-                        </h3>
+    <h3 class="font-bold text-lg mb-5">
+        Informasi
+    </h3>
 
-                        <ul class="space-y-3 text-sm text-slate-400">
-                            <li>Profil Kelurahan</li>
-                            <li>Pelayanan Masyarakat</li>
-                            <li>Pengaduan Warga</li>
-                            <li>Kegiatan RW</li>
-                        </ul>
+    <ul class="space-y-3 text-sm text-slate-400">
+        <li><a href="https://kel-joyotakan.surakarta.go.id/" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400 transition">Profil Kelurahan</a></li>
+        <li><a href="#tutorial" class="hover:text-blue-400 transition">Pelayanan Masyarakat</a></li>
+        <li><a href="#statistik" class="hover:text-blue-400 transition">Pengaduan Warga</a></li>
+        <li><a href="#berita" class="hover:text-blue-400 transition">Kegiatan RW</a></li>
+    </ul>
 
-                    </div>
+</div>
 
                     <div>
 
@@ -629,11 +612,11 @@
                     class="border-t border-white/10 mt-14 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
 
                     <p class="text-slate-500 text-xs tracking-widest uppercase font-bold">
-                        © 2026 Joyotakan Digital • Surakarta
+                        © 2026 SiKampung • Surakarta
                     </p>
 
                     <p class="text-slate-600 text-xs italic">
-                        Dikembangkan oleh Citra Tiyan Arifera
+                        Dikembangkan oleh Citra Arifera
                     </p>
 
                 </div>
