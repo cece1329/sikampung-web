@@ -101,7 +101,7 @@
                 <div class="relative">
 
                     <input type="password" name="pin" required autocomplete="new-password"
-                        placeholder="Masukkan PIN Rahasia"
+                        placeholder="Masukkan PIN Khusus"
                         class="input-style w-full px-5 py-4 rounded-2xl text-white placeholder:text-slate-500 outline-none">
 
                     <div class="absolute inset-y-0 right-5 flex items-center text-slate-500">

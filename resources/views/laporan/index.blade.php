@@ -94,7 +94,7 @@
                     <span class="text-white font-bold text-lg italic">J</span>
                 </div>
                 <span class="text-lg md:text-xl font-black tracking-tight uppercase">
-                    Joyotakan <span class="text-blue-600">Digital</span>
+                    Si <span class="text-blue-600">Kampung</span>
                 </span>
             </div>
 
@@ -164,10 +164,10 @@
 
                 <h1 class="text-5xl md:text-7xl font-black leading-tight tracking-tight mb-6">
 
-                    KOTA <br>
+                    JOYO <br>
 
                     <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-300">
-                        DIGITAL.
+                        JAYA
                     </span>
 
                 </h1>
@@ -175,7 +175,7 @@
                 <p class="text-base md:text-lg text-slate-200 leading-relaxed mb-8 max-w-xl">
 
                     Melayani masyarakat dengan sistem informasi terpadu untuk lingkungan yang lebih modern,
-                    transparan, dan berbudaya.
+                    transparan, dan berbudaya. Platform Pengaduan kerusakan fasilitas kampung.
 
                 </p>
 
