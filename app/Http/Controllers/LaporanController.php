@@ -131,7 +131,7 @@ class LaporanController extends Controller
             'status' => 'pending'
         ]);
 
-        return redirect()->route('home')->with('success', 'Laporan terkirim!');
+        return redirect()->route('home')->with('success', 'Laporan berhasil dikirim! Keluhan Anda akan segera diproses dan diselesaikan oleh pihak Kelurahan. Terima kasih sudah berkontribusi untuk Joyotakan!');
     }
 
     public function adminDashboard(Request $request)

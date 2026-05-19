@@ -135,6 +135,33 @@
         </div>
     </nav>
 
+    @if(session('success'))
+    <div id="toast-success" class="fixed top-24 left-1/2 transform -translate-x-1/2 z-[60] flex items-start gap-4 w-11/12 max-w-lg p-5 text-slate-800 bg-white rounded-2xl shadow-2xl border-l-8 border-green-500" role="alert" data-aos="fade-down">
+        <div class="inline-flex items-center justify-center flex-shrink-0 w-10 h-10 text-green-600 bg-green-100 rounded-full mt-1">
+            <i class="bi bi-check-lg text-2xl font-black"></i>
+        </div>
+        <div class="flex-1 text-sm font-semibold leading-relaxed">
+            <p class="text-green-700 font-black text-base mb-1">Berhasil!</p>
+            {{ session('success') }}
+        </div>
+        <button type="button" class="ms-auto -mx-1.5 -my-1.5 bg-white text-slate-400 hover:text-red-500 rounded-lg p-1.5 hover:bg-slate-100 inline-flex items-center justify-center h-8 w-8 transition" onclick="document.getElementById('toast-success').remove()" aria-label="Close">
+            <i class="bi bi-x-lg font-bold"></i>
+        </button>
+    </div>
+    
+    <script>
+        setTimeout(function() {
+            const toast = document.getElementById('toast-success');
+            if (toast) {
+                toast.style.opacity = '0';
+                toast.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                toast.style.transform = 'translate(-50%, -20px)';
+                setTimeout(() => toast.remove(), 500);
+            }
+        }, 8000);
+    </script>
+    @endif
+
     <header class="relative min-h-screen flex items-center overflow-hidden">
 
         <div class="absolute inset-0 z-0">
