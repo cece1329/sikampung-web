@@ -214,8 +214,8 @@
 
             <div class="marquee-text text-[3vw] md:text-[2vw] font-black text-white uppercase italic tracking-wider">
 
-                Joyotakan Digital • Surakarta Hadiningrat • Modernitas Berbudaya •
-                Joyotakan Digital • Surakarta Hadiningrat • Modernitas Berbudaya •
+                Joyotakan Digital • Surakarta Hadiningrat • Masyarakat Sejahtera • Joyotakan Jaya • 
+                Joyotakan Digital • Surakarta Hadiningrat • Masyarakat Sejahtera • Joyotakan Jaya •
 
             </div>
 
