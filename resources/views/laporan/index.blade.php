@@ -109,16 +109,18 @@
 
                 @auth
                     <div class="flex items-center gap-3 bg-blue-50 px-4 py-2 rounded-2xl border border-blue-100">
-                        <div class="text-right hidden sm:block">
-                            <p class="text-[9px] font-black text-blue-400 uppercase leading-none">Warga</p>
-                            <p class="text-xs font-bold text-blue-900">{{ Auth::user()->name }}</p>
-                        </div>
-                        <div
-                            class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xs shadow-sm">
-                            {{ substr(Auth::user()->name, 0, 1) }}
-                        </div>
+                        <a href="{{ route('laporan.profil') }}" class="flex items-center gap-3 hover:opacity-80 transition cursor-pointer" title="Lihat Profil">
+                            <div class="text-right hidden sm:block">
+                                <p class="text-[9px] font-black text-blue-400 uppercase leading-none">Warga</p>
+                                <p class="text-xs font-bold text-blue-900">{{ Auth::user()->name }}</p>
+                            </div>
+                            <div
+                                class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xs shadow-sm">
+                                {{ substr(Auth::user()->name, 0, 1) }}
+                            </div>
+                        </a>
                         <a href="{{ route('logout') }}"
-                            class="text-[10px] font-bold text-red-500 hover:text-red-700 ml-2 transition">
+                            class="text-[10px] font-bold text-red-500 hover:text-red-700 ml-2 border-l border-blue-200 pl-3 transition">
                             KELUAR
                         </a>
                     </div>

@@ -25,6 +25,7 @@ Route::middleware(['auth'])->group(function () {
     // FITUR WARGA
     Route::get('/tambah', [LaporanController::class, 'create'])->name('laporan.create');
     Route::post('/simpan-laporan', [LaporanController::class, 'store'])->name('laporan.store');
+    Route::get('/profil', [LaporanController::class, 'profil'])->name('laporan.profil');
 
     // FITUR ADMIN
     Route::prefix('admin')->group(function () {

@@ -87,6 +87,13 @@ class LaporanController extends Controller
         return view('laporan.create');
     }
 
+    public function profil()
+    {
+        $user = Auth::user();
+        $laporans = Laporan::where('user_id', $user->id)->latest()->get();
+        return view('laporan.profil', compact('user', 'laporans'));
+    }
+
     public function store(Request $request)
     {
         $request->validate([
