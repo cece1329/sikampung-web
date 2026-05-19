@@ -19,7 +19,7 @@
     <nav class="bg-white shadow-sm border-b border-slate-200 p-4 flex justify-between items-center sticky top-0 z-50">
         <div class="flex items-center gap-2">
             <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-                <span class="text-white font-bold">J</span>
+                <span class="text-white font-bold">S</span>
             </div>
             <h1 class="text-xl font-bold text-slate-800 tracking-tight">ADMIN <span
                     class="text-blue-600">JOYOTAKAN</span></h1>
