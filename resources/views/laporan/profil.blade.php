@@ -129,8 +129,8 @@
                         <i class="bi bi-inbox"></i>
                     </div>
                     @if(request('search') || (request('status') && request('status') != 'semua'))
-                        <h3 class="text-lg font-bold text-slate-700 mb-1">Laporan Tidak Ditemukan</h3>
-                        <p class="text-slate-500 text-sm">Tidak ada laporan yang sesuai dengan pencarian atau filter Anda.</p>
+                        <h3 class="text-lg font-bold text-slate-700 mb-1">Tidak ada hasil</h3>
+                        <p class="text-slate-500 text-sm">Laporan dengan status atau kata kunci tersebut kosong.</p>
                     @else
                         <h3 class="text-lg font-bold text-slate-700 mb-1">Belum Ada Laporan</h3>
                         <p class="text-slate-500 text-sm">Anda belum pernah membuat laporan atau pengaduan.</p>

@@ -166,8 +166,8 @@
                                     <td colspan="6" class="py-32 text-center">
                                         <div class="text-slate-400 font-bold mb-2 text-xl">📦</div>
                                         @if(request('search') || (request('status') && request('status') != 'semua'))
-                                            <div class="text-slate-500 font-bold">Laporan Tidak Ditemukan</div>
-                                            <div class="text-slate-400 text-xs mt-1">Tidak ada laporan yang sesuai dengan pencarian atau filter Anda.</div>
+                                            <div class="text-slate-500 font-bold">Tidak ada hasil</div>
+                                            <div class="text-slate-400 text-xs mt-1">Laporan dengan status atau kata kunci tersebut kosong.</div>
                                         @else
                                             <div class="text-slate-500 font-bold">Belum ada laporan masuk.</div>
                                         @endif
