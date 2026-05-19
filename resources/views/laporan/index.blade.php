@@ -30,10 +30,11 @@
             background-attachment: fixed;
         }
 
+        /* Dioptimalkan sedikit transparansinya agar motif batik di bawah card tetap mengintip estetik */
         .glass-card {
-            background: rgba(255, 255, 255, 0.82);
+            background: rgba(255, 255, 255, 0.65);
             backdrop-filter: blur(14px);
-            border: 1px solid rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.5);
         }
 
         .marquee-text {
@@ -225,8 +226,7 @@
 
     <section id="tutorial" class="py-24 px-6 relative">
 
-        <div
-            class="max-w-7xl mx-auto bg-white/80 backdrop-blur-md rounded-[3rem] p-10 md:p-16 border border-white/70 shadow-[0_20px_60px_rgba(0,0,0,0.06)]">
+        <div class="max-w-7xl mx-auto">
 
             <div class="text-center mb-16" data-aos="fade-up">
 
@@ -263,7 +263,7 @@
                     </h3>
 
                     <p class="text-slate-500 text-sm leading-relaxed">
-                        Masuk menggunakan NIK warga atau akun admin untuk mengakses layanan laporan digital.
+                        Masuk menggunakan NIK warga atau akun admin untuk accessing layanan laporan digital.
                     </p>
 
                 </div>
@@ -339,8 +339,7 @@
 
     <section id="statistik" class="py-20 px-6 relative z-10">
 
-        <div
-            class="max-w-7xl mx-auto bg-white/80 backdrop-blur-md rounded-[3rem] p-10 md:p-16 border border-white/70 shadow-[0_20px_60px_rgba(0,0,0,0.06)]">
+        <div class="max-w-7xl mx-auto">
 
             <div class="flex flex-col md:flex-row justify-between items-end gap-6 mb-14" data-aos="fade-up">
 
@@ -421,8 +420,7 @@
 
     <section id="berita" class="py-20 px-6">
 
-        <div
-            class="max-w-7xl mx-auto bg-white/80 backdrop-blur-md rounded-[3rem] p-10 md:p-16 border border-white/70 shadow-[0_20px_60px_rgba(0,0,0,0.06)]">
+        <div class="max-w-7xl mx-auto">
 
             <div class="text-center mb-14">
 
@@ -563,16 +561,16 @@
                         </p>
 
                         <div class="flex items-center gap-3">
-    <a href="https://instagram.com/kelurahanjoyotakan" target="_blank" rel="noopener noreferrer" 
-        class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:bg-gradient-to-tr hover:from-amber-500 hover:via-pink-600 hover:to-purple-600 hover:text-white hover:border-transparent transition-all duration-300 group">
-        <i class="bi bi-instagram text-lg group-hover:scale-110 transition"></i>
-    </a>
-    
-    <a href="https://wa.me/6289540164305" target="_blank" rel="noopener noreferrer" 
-        class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:bg-emerald-600 hover:text-white hover:border-emerald-500 transition-all duration-300 group">
-        <i class="bi bi-whatsapp text-lg group-hover:scale-110 transition"></i>
-    </a>
-</div>
+                            <a href="https://instagram.com/kelurahanjoyotakan" target="_blank" rel="noopener noreferrer" 
+                                class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:bg-gradient-to-tr hover:from-amber-500 hover:via-pink-600 hover:to-purple-600 hover:text-white hover:border-transparent transition-all duration-300 group">
+                                <i class="bi bi-instagram text-lg group-hover:scale-110 transition"></i>
+                            </a>
+                            
+                            <a href="https://wa.me/6289540164305" target="_blank" rel="noopener noreferrer" 
+                                class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:bg-emerald-600 hover:text-white hover:border-emerald-500 transition-all duration-300 group">
+                                <i class="bi bi-whatsapp text-lg group-hover:scale-110 transition"></i>
+                            </a>
+                        </div>
 
                     </div>
 
