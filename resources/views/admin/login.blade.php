@@ -43,7 +43,7 @@
                 class="w-16 h-16 bg-slate-900 rounded-2xl flex items-center justify-center mx-auto shadow-2xl shadow-slate-900/30 mb-5 border border-slate-700">
 
                 <span class="text-white text-2xl font-black italic">
-                    J
+                    S
                 </span>
 
             </div>
