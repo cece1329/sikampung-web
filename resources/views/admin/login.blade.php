@@ -4,140 +4,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Login | Joyotakan Digital</title>
+    <title>Login | Joyotakan Digital</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=400;500;600;700;800&display=swap"
         rel="stylesheet">
 
     <style>
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #020617;
+            background-color: #f8fafc;
+        }
+
+        /* Motif Batik Ketupat */
+        .bg-batik {
+            background-image:
+                url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2394a3b8' fill-opacity='0.05'%3E%3Cpath d='M50 0L100 50L50 100L0 50Z'/%3E%3Ccircle cx='50' cy='50' r='12'/%3E%3C/g%3E%3C/svg%3E");
+            background-size: 120px;
         }
 
         .glass {
-            background: rgba(15, 23, 42, 0.72);
-            backdrop-filter: blur(18px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .bg-pattern {
-            background-image:
-                radial-gradient(circle at 25% 25%, rgba(59, 130, 246, 0.15) 0, transparent 25%),
-                radial-gradient(circle at 75% 75%, rgba(14, 165, 233, 0.12) 0, transparent 25%);
-        }
-
-        .input-style {
-            background: rgba(15, 23, 42, 0.6);
-            border: 1px solid rgb(51 65 85);
-            transition: 0.3s;
-        }
-
-        .input-style:focus {
-            border-color: rgb(59 130 246);
-            box-shadow: 0 0 0 5px rgba(59, 130, 246, 0.15);
+            background: rgba(255, 255, 255, 0.82);
+            backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.7);
         }
     </style>
 </head>
 
-<body class="min-h-screen flex items-center justify-center p-6 overflow-hidden bg-pattern">
+<body class="bg-batik min-h-screen flex items-center justify-center p-6">
 
-    <!-- BACKGROUND -->
-    <div class="absolute inset-0 overflow-hidden">
+    <div class="w-full max-w-md glass rounded-[2.5rem] p-10 shadow-2xl">
 
-        <div class="absolute -top-40 -left-40 w-[30rem] h-[30rem] bg-blue-600/20 rounded-full blur-3xl">
-        </div>
-
-        <div class="absolute bottom-0 right-0 w-[28rem] h-[28rem] bg-cyan-500/10 rounded-full blur-3xl">
-        </div>
-
-    </div>
-
-    <!-- CARD -->
-    <div class="relative z-10 w-full max-w-md glass rounded-[2.7rem] p-10 shadow-2xl">
-
-        <!-- LOGO -->
         <div class="text-center mb-10">
 
             <div
-                class="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-700 rounded-[1.7rem] flex items-center justify-center mx-auto shadow-2xl shadow-blue-600/30 mb-6">
+                class="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mx-auto shadow-2xl shadow-blue-600/30 mb-5">
 
-                <span class="text-white text-3xl font-black italic">
+                <span class="text-white text-2xl font-black italic">
                     J
                 </span>
 
             </div>
 
-            <h1 class="text-3xl font-black tracking-tight text-white">
-                Admin Panel
+            <h1 class="text-3xl font-black tracking-tight text-slate-900">
+                Joyotakan <span class="text-blue-600">Digital</span>
             </h1>
 
-            <p class="text-slate-400 text-sm mt-3 leading-relaxed">
-                Akses terbatas khusus administrator <br>
-                Joyotakan Digital
+            <p class="text-slate-500 text-sm mt-3 leading-relaxed">
+                Sistem Pelayanan dan Pengaduan Warga Kelurahan Joyotakan
             </p>
 
         </div>
 
-        <!-- ERROR -->
-        @if ($errors->any())
-            <div class="mb-6 bg-red-500/10 border border-red-500/20 text-red-300 text-sm rounded-2xl px-5 py-4">
-                {{ $errors->first() }}
-            </div>
-        @endif
-
-        <!-- FORM -->
-        <form action="/login" method="POST" autocomplete="off" class="space-y-6">
+        <form action="/login" method="POST" class="space-y-6" id="loginForm">
             @csrf
 
             <div>
 
-                <label class="block text-sm font-bold text-slate-300 mb-3">
-                    PIN Administrator
+                <label class="block text-sm font-bold text-slate-700 mb-2">
+                    NIK Warga
                 </label>
 
-                <div class="relative">
+                <input type="text" name="nik" id="nikInput" maxlength="16" placeholder="Masukkan 16 digit NIK"
+                    class="w-full px-5 py-4 rounded-2xl border border-slate-200 bg-white/70 focus:ring-4 focus:ring-blue-100 focus:border-blue-500 outline-none transition">
 
-                    <input type="password" name="pin" required autocomplete="new-password"
-                        placeholder="Masukkan PIN Khusus"
-                        class="input-style w-full px-5 py-4 rounded-2xl text-white placeholder:text-slate-500 outline-none">
-
-                    <div class="absolute inset-y-0 right-5 flex items-center text-slate-500">
-                        🔒
+                <div id="peringatanNik" class="hidden mt-3 p-4 bg-red-50 border border-red-200 rounded-2xl flex items-start gap-2.5">
+                    <span class="text-red-500 text-sm">⚠️</span>
+                    <div>
+                        <p class="text-xs font-bold text-red-800">Gagal Masuk Sistem</p>
+                        <p class="text-[11px] text-red-600 mt-0.5" id="pesanDetail">NIK harus pas 16 digit angka!</p>
                     </div>
-
                 </div>
 
             </div>
 
-            <button type="submit"
-                class="w-full bg-blue-600 hover:bg-blue-700 text-white py-4 rounded-2xl font-bold shadow-2xl shadow-blue-600/20 transition duration-300 active:scale-95">
+            <button type="button" onclick="cekValidasiWarga()"
+                class="w-full bg-blue-600 hover:bg-blue-700 text-white py-4 rounded-2xl font-bold shadow-xl shadow-blue-600/20 transition duration-300 active:scale-95">
 
-                Masuk Admin
+                Masuk ke Sistem
 
             </button>
 
         </form>
 
-        <!-- INFO -->
-        <div class="mt-8 pt-6 border-t border-white/10 text-center">
+        <div class="mt-8 pt-6 border-t border-slate-200 text-center">
 
-            <p class="text-xs uppercase tracking-[0.2em] text-slate-500 font-bold">
-                Authorized Personnel Only
+            <p class="text-xs text-slate-400 leading-relaxed">
+                Portal resmi pengaduan masyarakat berbasis digital.
+            </p>
+
+            <p class="text-[11px] text-slate-300 mt-3 italic">
+                Joyotakan • Surakarta
             </p>
 
         </div>
 
-        <!-- BACK -->
-        <a href="/" class="block text-center mt-8 text-sm text-slate-500 hover:text-blue-400 transition">
+        <a href="/" class="block text-center mt-8 text-sm text-slate-400 hover:text-blue-600 transition">
 
             ← Kembali ke Beranda
 
         </a>
 
     </div>
+
+    <script>
+        const form = document.getElementById('loginForm');
+        const nikInput = document.getElementById('nikInput');
+        const peringatanBox = document.getElementById('peringatanNik');
+        const pesanDetail = document.getElementById('pesanDetail');
+
+        // Biar warga gak bisa ngetik huruf (otomatis kehapus kalau ngetik huruf)
+        nikInput.addEventListener('input', function() {
+            this.value = this.value.replace(/[^0-9]/g, '');
+            
+            // Sembunyikan kotak merah kalau pas diketik jumlahnya udah bener 16
+            if (this.value.length === 16) {
+                peringatanBox.classList.add('hidden');
+                nikInput.classList.remove('border-red-400', 'focus:ring-red-100');
+            }
+        });
+
+        // Fungsi pengecekan pas tombol diklik
+        function cekValidasiWarga() {
+            const nilaiNik = nikInput.value.trim();
+
+            if (nilaiNik.length !== 16) {
+                // Halaman gak bakalan ke-refresh di sini karena tipenya button biasa
+                if (nilaiNik.length === 0) {
+                    pesanDetail.innerText = "Kolom NIK masih kosong, diisi dulu ya!";
+                } else {
+                    pesanDetail.innerText = "Data salah! NIK kamu baru " + nilaiNik.length + " digit. Harus pas 16 digit angka.";
+                }
+
+                // Munculkan peringatan merahnya
+                peringatanBox.classList.remove('hidden');
+                nikInput.classList.add('border-red-400', 'focus:ring-red-100');
+                nikInput.focus();
+            } else {
+                // Kalau sudah pas 16 digit angka, baru form dikirim resmi ke backend Laravel
+                form.submit();
+            }
+        }
+    </script>
 
 </body>
 

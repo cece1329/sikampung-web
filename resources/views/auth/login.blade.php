@@ -69,7 +69,14 @@
                 </label>
 
                 <input type="text" name="nik" maxlength="16" required placeholder="Masukkan 16 digit NIK"
-                    class="w-full px-5 py-4 rounded-2xl border border-slate-200 bg-white/70 focus:ring-4 focus:ring-blue-100 focus:border-blue-500 outline-none transition">
+                    class="w-full px-5 py-4 rounded-2xl border @error('nik') border-red-500 @else border-slate-200 @enderror bg-white/70 focus:ring-4 @error('nik') focus:ring-red-100 focus:border-red-500 @else focus:ring-blue-100 focus:border-blue-500 @enderror outline-none transition" value="{{ old('nik') }}">
+                
+                @error('nik')
+                    <p class="text-red-500 text-sm mt-2 font-medium">{{ $message }}</p>
+                @enderror
+                @error('message')
+                    <p class="text-red-500 text-sm mt-2 font-medium">{{ $message }}</p>
+                @enderror
 
             </div>
 

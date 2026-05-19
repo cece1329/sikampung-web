@@ -54,16 +54,24 @@ class LaporanController extends Controller
         }
 
         // Login buat Warga pakai NIK
-        if ($request->filled('nik')) {
+        if ($request->has('nik')) {
+            $request->validate([
+                'nik' => 'required|numeric|digits:16'
+            ], [
+                'nik.required' => 'NIK wajib diisi.',
+                'nik.numeric' => 'NIK hanya boleh berisi angka, tidak boleh ada huruf.',
+                'nik.digits' => 'NIK harus berjumlah persis 16 digit angka.'
+            ]);
+
             $user = User::where('nik', $request->nik)->first();
             if ($user) {
                 Auth::login($user);
                 $request->session()->regenerate();
                 return redirect('/');
             }
-            return back()->withErrors(['message' => 'NIK tidak terdaftar']);
+            return back()->withErrors(['nik' => 'NIK tidak terdaftar di sistem.'])->withInput();
         }
-        return back()->withErrors(['message' => 'Isi NIK atau PIN']);
+        return back()->withErrors(['nik' => 'Isi NIK untuk masuk.']);
     }
 
     public function logout()
