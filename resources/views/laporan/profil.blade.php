@@ -93,14 +93,34 @@
 
         <!-- DAFTAR LAPORAN -->
         <div class="glass-card rounded-3xl p-8 shadow-xl">
-            <div class="flex justify-between items-center mb-6">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4">
                 <div>
                     <h2 class="text-2xl font-black">Riwayat Laporan Anda</h2>
                     <p class="text-sm text-slate-500 mt-1">Daftar semua pengaduan yang telah Anda kirimkan.</p>
                 </div>
-                <a href="{{ route('laporan.create') }}" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-xl font-bold transition shadow-lg shadow-blue-200 text-sm flex items-center gap-2">
-                    <i class="bi bi-plus-lg"></i> Buat Laporan
-                </a>
+                <div class="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+                    <form action="{{ route('laporan.profil') }}" method="GET" class="flex flex-col sm:flex-row gap-2 w-full">
+                        <input type="text" name="search" value="{{ request('search') }}" placeholder="Cari laporan..."
+                            class="px-4 py-2 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm w-full md:w-auto">
+                        <select name="status" class="px-4 py-2 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm bg-white w-full md:w-auto">
+                            <option value="semua" {{ request('status') == 'semua' ? 'selected' : '' }}>Semua</option>
+                            <option value="pending" {{ request('status') == 'pending' ? 'selected' : '' }}>Ditinjau</option>
+                            <option value="proses" {{ request('status') == 'proses' ? 'selected' : '' }}>Diproses</option>
+                            <option value="selesai" {{ request('status') == 'selesai' ? 'selected' : '' }}>Selesai</option>
+                        </select>
+                        <button type="submit" class="bg-slate-800 hover:bg-slate-900 text-white px-4 py-2 rounded-xl font-bold text-sm transition">
+                            <i class="bi bi-search"></i>
+                        </button>
+                        @if(request('search') || (request('status') && request('status') != 'semua'))
+                            <a href="{{ route('laporan.profil') }}" class="bg-red-50 hover:bg-red-100 text-red-500 px-4 py-2 rounded-xl font-bold text-sm transition flex items-center justify-center">
+                                <i class="bi bi-x-lg"></i>
+                            </a>
+                        @endif
+                    </form>
+                    <a href="{{ route('laporan.create') }}" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-xl font-bold transition shadow-lg shadow-blue-200 text-sm flex items-center justify-center gap-2 flex-shrink-0">
+                        <i class="bi bi-plus-lg"></i> Buat Laporan
+                    </a>
+                </div>
             </div>
 
             @if($laporans->isEmpty())
@@ -108,8 +128,13 @@
                     <div class="w-16 h-16 bg-slate-200 rounded-full flex items-center justify-center mx-auto mb-4 text-slate-400 text-2xl">
                         <i class="bi bi-inbox"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-slate-700 mb-1">Belum Ada Laporan</h3>
-                    <p class="text-slate-500 text-sm">Anda belum pernah membuat laporan atau pengaduan.</p>
+                    @if(request('search') || (request('status') && request('status') != 'semua'))
+                        <h3 class="text-lg font-bold text-slate-700 mb-1">Laporan Tidak Ditemukan</h3>
+                        <p class="text-slate-500 text-sm">Tidak ada laporan yang sesuai dengan pencarian atau filter Anda.</p>
+                    @else
+                        <h3 class="text-lg font-bold text-slate-700 mb-1">Belum Ada Laporan</h3>
+                        <p class="text-slate-500 text-sm">Anda belum pernah membuat laporan atau pengaduan.</p>
+                    @endif
                 </div>
             @else
                 <div class="overflow-x-auto">
@@ -145,7 +170,7 @@
                                     @endif
                                 </td>
                                 <td class="p-4 align-top">
-                                    @if($laporan->status == 'ditinjau')
+                                    @if($laporan->status == 'pending')
                                         <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-amber-50 text-amber-700 border border-amber-200 rounded-full text-xs font-bold">
                                             <span class="w-1.5 h-1.5 bg-amber-500 rounded-full animate-pulse"></span>
                                             Ditinjau
@@ -155,10 +180,15 @@
                                             <i class="bi bi-arrow-repeat text-blue-500 animate-spin"></i>
                                             Diproses
                                         </span>
-                                    @else
+                                    @elseif($laporan->status == 'selesai')
                                         <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-green-50 text-green-700 border border-green-200 rounded-full text-xs font-bold">
                                             <i class="bi bi-check-circle-fill text-green-500"></i>
                                             Selesai
+                                        </span>
+                                    @else
+                                        <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-slate-50 text-slate-700 border border-slate-200 rounded-full text-xs font-bold">
+                                            <i class="bi bi-dash-circle text-slate-500"></i>
+                                            Unknown
                                         </span>
                                     @endif
                                 </td>

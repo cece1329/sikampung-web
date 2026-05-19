@@ -87,10 +87,27 @@ class LaporanController extends Controller
         return view('laporan.create');
     }
 
-    public function profil()
+    public function profil(Request $request)
     {
         $user = Auth::user();
-        $laporans = Laporan::where('user_id', $user->id)->latest()->get();
+        
+        $query = Laporan::where('user_id', $user->id)->latest();
+
+        if ($request->filled('search')) {
+            $search = $request->search;
+            $query->where(function($q) use ($search) {
+                $q->where('judul', 'like', "%{$search}%")
+                  ->orWhere('lokasi', 'like', "%{$search}%")
+                  ->orWhere('description', 'like', "%{$search}%");
+            });
+        }
+
+        if ($request->filled('status') && $request->status != 'semua') {
+            $query->where('status', $request->status);
+        }
+
+        $laporans = $query->get();
+
         return view('laporan.profil', compact('user', 'laporans'));
     }
 
@@ -111,15 +128,34 @@ class LaporanController extends Controller
             'lokasi' => $request->lokasi,
             'description' => $request->description,
             'foto' => $foto,
-            'status' => 'ditinjau'
+            'status' => 'pending'
         ]);
 
         return redirect()->route('home')->with('success', 'Laporan terkirim!');
     }
 
-    public function adminDashboard()
+    public function adminDashboard(Request $request)
     {
-        $laporans = Laporan::with('user')->latest()->get();
+        $query = Laporan::with('user')->latest();
+
+        if ($request->filled('search')) {
+            $search = $request->search;
+            $query->where(function($q) use ($search) {
+                $q->where('judul', 'like', "%{$search}%")
+                  ->orWhere('lokasi', 'like', "%{$search}%")
+                  ->orWhere('description', 'like', "%{$search}%")
+                  ->orWhereHas('user', function($userQuery) use ($search) {
+                      $userQuery->where('name', 'like', "%{$search}%")
+                                ->orWhere('nik', 'like', "%{$search}%");
+                  });
+            });
+        }
+
+        if ($request->filled('status') && $request->status != 'semua') {
+            $query->where('status', $request->status);
+        }
+
+        $laporans = $query->get();
         return view('laporan.admin', compact('laporans'));
     }
 

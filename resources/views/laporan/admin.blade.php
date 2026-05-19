@@ -34,9 +34,30 @@
 
     <div class="p-8">
         <div class="max-w-7xl mx-auto">
-            <div class="mb-8">
-                <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Manajemen Laporan</h2>
-                <p class="text-slate-500 mt-1">Update status aduan warga (Proses/Selesai).</p>
+            <div class="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
+                <div>
+                    <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Manajemen Laporan</h2>
+                    <p class="text-slate-500 mt-1">Update status aduan warga (Proses/Selesai).</p>
+                </div>
+
+                <form action="{{ route('admin.dashboard') }}" method="GET" class="flex flex-col sm:flex-row gap-3">
+                    <input type="text" name="search" value="{{ request('search') }}" placeholder="Cari nama, NIK, judul..."
+                        class="px-4 py-2 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm">
+                    <select name="status" class="px-4 py-2 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm bg-white">
+                        <option value="semua" {{ request('status') == 'semua' ? 'selected' : '' }}>Semua Status</option>
+                        <option value="pending" {{ request('status') == 'pending' ? 'selected' : '' }}>Ditinjau</option>
+                        <option value="proses" {{ request('status') == 'proses' ? 'selected' : '' }}>Diproses</option>
+                        <option value="selesai" {{ request('status') == 'selesai' ? 'selected' : '' }}>Selesai</option>
+                    </select>
+                    <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-xl font-bold text-sm shadow-md transition">
+                        Filter
+                    </button>
+                    @if(request('search') || (request('status') && request('status') != 'semua'))
+                        <a href="{{ route('admin.dashboard') }}" class="bg-slate-100 hover:bg-slate-200 text-slate-600 px-5 py-2 rounded-xl font-bold text-sm shadow-sm transition flex items-center justify-center">
+                            Reset
+                        </a>
+                    @endif
+                </form>
             </div>
 
             <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
@@ -92,12 +113,15 @@
                                         @if ($l->status == 'proses')
                                             <span
                                                 class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-[10px] font-black uppercase tracking-tighter">Diproses</span>
-                                        @elseif($l->status == 'selesai') {{-- SUDAH DIGANTI JADI 'selesai' --}}
+                                        @elseif($l->status == 'selesai')
                                             <span
                                                 class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-[10px] font-black uppercase tracking-tighter">Selesai</span>
-                                        @else
+                                        @elseif($l->status == 'pending')
                                             <span
                                                 class="px-3 py-1 bg-amber-100 text-amber-700 rounded-full text-[10px] font-black uppercase tracking-tighter">Ditinjau</span>
+                                        @else
+                                            <span
+                                                class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-[10px] font-black uppercase tracking-tighter">Unknown</span>
                                         @endif
                                     </td>
                                     <td class="py-5 px-6">
@@ -139,8 +163,15 @@
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="6" class="py-32 text-center text-slate-400 font-bold">Belum ada laporan
-                                        masuk.</td>
+                                    <td colspan="6" class="py-32 text-center">
+                                        <div class="text-slate-400 font-bold mb-2 text-xl">📦</div>
+                                        @if(request('search') || (request('status') && request('status') != 'semua'))
+                                            <div class="text-slate-500 font-bold">Laporan Tidak Ditemukan</div>
+                                            <div class="text-slate-400 text-xs mt-1">Tidak ada laporan yang sesuai dengan pencarian atau filter Anda.</div>
+                                        @else
+                                            <div class="text-slate-500 font-bold">Belum ada laporan masuk.</div>
+                                        @endif
+                                    </td>
                                 </tr>
                             @endforelse
                         </tbody>
