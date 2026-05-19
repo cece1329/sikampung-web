@@ -43,13 +43,13 @@
                 class="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mx-auto shadow-2xl shadow-blue-600/30 mb-5">
 
                 <span class="text-white text-2xl font-black italic">
-                    J
+                    S
                 </span>
 
             </div>
 
             <h1 class="text-3xl font-black tracking-tight text-slate-900">
-                Joyotakan <span class="text-blue-600">Digital</span>
+                Si <span class="text-blue-600">Kampung</span>
             </h1>
 
             <p class="text-slate-500 text-sm mt-3 leading-relaxed">
