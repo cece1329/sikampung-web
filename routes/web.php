@@ -36,7 +36,7 @@ Route::middleware(['auth'])->group(function () {
         Route::patch('/laporan/selesai/{id}', [LaporanController::class, 'updateLaporan'])->name('admin.laporan.update');
         Route::delete('/laporan/{id}', [LaporanController::class, 'destroyLaporan'])->name('admin.laporan.destroy');
 
-        // Data Penduduk
+        // Data Penduduk (CRUD)
         Route::get('/warga', [LaporanController::class, 'dataWarga'])->name('admin.warga');
         Route::post('/warga', [LaporanController::class, 'storeWarga'])->name('admin.warga.store');
     });
