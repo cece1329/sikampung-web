@@ -89,6 +89,7 @@
 <body class="bg-batik text-slate-900" id="profil">
 
     <nav class="fixed w-full z-50 bg-white/70 backdrop-blur-md border-b border-slate-200">
+
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
             <div class="flex items-center gap-3">
