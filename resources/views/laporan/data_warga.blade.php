@@ -140,6 +140,20 @@
                                                     class="w-full border-slate-200 border-2 p-3 rounded-xl focus:border-blue-500 focus:outline-none transition"
                                                     required>
                                             </div>
+
+                                            <div>
+                                                <label class="block text-sm font-bold text-slate-700 mb-2">RT</label>
+                                                <input type="text" name="rt" value="{{ $w->rt }}"
+                                                    class="w-full border-slate-200 border-2 p-3 rounded-xl focus:border-blue-500 focus:outline-none transition"
+                                                    required>
+                                            </div>
+
+                                            <div>
+                                                <label class="block text-sm font-bold text-slate-700 mb-2">RW</label>
+                                                <input type="text" name="rw" value="{{ $w->rw }}"
+                                                    class="w-full border-slate-200 border-2 p-3 rounded-xl focus:border-blue-500 focus:outline-none transition"
+                                                    required>
+                                            </div>
                                         </form>
                                     </td>
                                 </tr>
