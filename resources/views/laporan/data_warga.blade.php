@@ -73,7 +73,7 @@
                     </div>
 
                     <button type="submit"
-                        class="md:col-span-2 bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl shadow-lg shadow-blue-100 transition-all transform hover:scale-[1.01]">
+                        class="md:col-span-2 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-xl shadow-lg shadow-blue-100 transition-all transform hover:scale-[1.01]">
                         Simpan Data Penduduk
                     </button>
                 </form>
