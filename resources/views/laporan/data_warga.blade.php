@@ -99,6 +99,15 @@
                                     <td class="py-3 px-4 md:px-6 font-bold text-slate-700">{{ $w->name }}</td>
                                     <td class="py-3 px-4 md:px-6 text-slate-600 font-mono text-sm">{{ $w->nik }}</td>
                                     <td class="py-3 px-4 md:px-6 text-center text-slate-500 font-medium">{{ $w->rt }} / {{ $w->rw }}</td>
+                                    <td class="py-3 px-4 md:px-6 text-center">
+                                        <div class="inline-flex items-center gap-2">
+                                            <button type="button"
+                                                class="px-3 py-1 rounded-lg bg-blue-50 text-blue-700 font-bold text-[11px] md:text-xs"
+                                                onclick="document.getElementById('edit-{{ $w->id }}').classList.remove('hidden')">
+                                                Edit
+                                            </button>
+                                        </div>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>
