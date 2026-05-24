@@ -40,5 +40,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/warga', [LaporanController::class, 'dataWarga'])->name('admin.warga');
         Route::post('/warga', [LaporanController::class, 'storeWarga'])->name('admin.warga.store');
         Route::patch('/warga/{id}', [LaporanController::class, 'updateWarga'])->name('admin.warga.update');
+        Route::delete('/warga/{id}', [LaporanController::class, 'destroyWarga'])->name('admin.warga.destroy');
     });
+
 });
