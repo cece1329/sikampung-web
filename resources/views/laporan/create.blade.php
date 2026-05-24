@@ -18,10 +18,13 @@
     <div class="max-w-2xl mx-auto bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
 <div class="bg-blue-600 p-8 text-white">
             <h2 class="text-2xl font-bold">Formulir Pengaduan Warga</h2>
+
             <p class="text-blue-100 text-sm mt-1">Laporan Anda akan diteruskan ke Admin Kelurahan Joyotakan.</p>
         </div>
 
-        <form action="{{ route('laporan.store') }}" method="POST" enctype="multipart/form-data" class="p-4 sm:p-8 space-y-6">
+<form action="{{ route('laporan.store') }}" method="POST" enctype="multipart/form-data" class="p-4 sm:p-8 space-y-6">
+
+
             @csrf
 
             <div class="space-y-2">
@@ -61,8 +64,9 @@
 
             <div class="space-y-2">
                 <label class="text-sm font-bold text-slate-700">Lampiran Foto Bukti</label>
-                <div
-                    class="border-2 border-dashed border-slate-200 rounded-2xl p-8 text-center hover:bg-blue-50/50 hover:border-blue-300 transition relative">
+<div
+                    class="border-2 border-dashed border-slate-200 rounded-2xl p-5 sm:p-8 text-center hover:bg-blue-50/50 hover:border-blue-300 transition relative">
+
                     <input type="file" name="foto" id="fotoInput" class="absolute inset-0 opacity-0 cursor-pointer"
                         required accept="image/*" onchange="showPreview()">
 
