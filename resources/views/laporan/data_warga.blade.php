@@ -87,18 +87,17 @@
                     <table class="w-full text-left">
                         <thead class="bg-slate-50">
                             <tr>
-                                <th class="py-4 px-6 text-xs font-bold text-slate-500 uppercase">Nama</th>
-                                <th class="py-4 px-6 text-xs font-bold text-slate-500 uppercase">NIK</th>
-                                <th class="py-4 px-6 text-xs font-bold text-slate-500 uppercase text-center">RT/RW</th>
+                                <th class="py-3 px-4 md:px-6 text-[11px] md:text-xs font-bold text-slate-500 uppercase">Nama</th>
+                                <th class="py-3 px-4 md:px-6 text-[11px] md:text-xs font-bold text-slate-500 uppercase">NIK</th>
+                                <th class="py-3 px-4 md:px-6 text-[11px] md:text-xs font-bold text-slate-500 uppercase text-center">RT/RW</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-slate-100">
                             @foreach($wargas as $w)
                                 <tr class="hover:bg-blue-50/50 transition">
-                                    <td class="py-4 px-6 font-bold text-slate-700">{{ $w->name }}</td>
-                                    <td class="py-4 px-6 text-slate-600 font-mono text-sm">{{ $w->nik }}</td>
-                                    <td class="py-4 px-6 text-center text-slate-500 font-medium">{{ $w->rt }} / {{ $w->rw }}
-                                    </td>
+                                    <td class="py-3 px-4 md:px-6 font-bold text-slate-700">{{ $w->name }}</td>
+                                    <td class="py-3 px-4 md:px-6 text-slate-600 font-mono text-sm">{{ $w->nik }}</td>
+                                    <td class="py-3 px-4 md:px-6 text-center text-slate-500 font-medium">{{ $w->rt }} / {{ $w->rw }}</td>
                                 </tr>
                             @endforeach
                         </tbody>
