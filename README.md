@@ -190,6 +190,10 @@ Seksi tutorial yang menjelaskan 4 langkah mudah membuat laporan: Login Sistem �
 Seksi berita menampilkan 3 artikel kegiatan terkini Kelurahan Joyotakan (Posyandu Remaja, Kerja Bakti Lingkungan, Pelatihan UMKM Digital) dengan foto, deskripsi singkat, dan tanggal publikasi.
 ![Beranda Berita](public/screenshots/beranda_berita.png)
 
+### 18. Footer 
+Bagian Footer web yang berisikan maps kelurahan joyotakan, jam operasional kelurahan joyotakan, alamat kelurahan joyotakan dan informasi Kontak Kelurahan Joyotakan (nomor whatshap dan email). Serta terdapat juga link ke media sosial kelurahan joyotakan (instagram dan whatsapp).
+![Footer](public/screenshots/footer.png)
+
 ---
 
 ## 🗄️ Rancangan Database (ERD Diagram)
