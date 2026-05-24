@@ -150,6 +150,26 @@ Pusat kontrol admin untuk memantau, mencari, memfilter, serta mengubah status ke
 Halaman admin untuk mengelola (Tambah, Edit secara inline, dan Hapus) data warga terdaftar.
 ![Manajemen Warga](public/screenshots/admin_warga.png)
 
+### 8. Form Tambah Warga & Daftar Warga Terdaftar
+Formulir pendaftaran data warga baru (nama, NIK 16 digit, RT, RW) beserta tabel daftar warga yang dilengkapi tombol **Edit** dan **Hapus** pada kolom aksi.
+![Form Tambah Warga](public/screenshots/admin_warga_form.png)
+
+### 9. Form Pengaduan Warga (Tambah Laporan)
+Formulir pengaduan yang dapat diisi warga mencakup Subjek Laporan, Wilayah RW, Detail Lokasi, Deskripsi masalah, serta unggahan **Foto Bukti** dengan pratinjau gambar secara langsung.
+![Form Pengaduan](public/screenshots/form_pengaduan.png)
+
+### 10. Beranda — Notifikasi Laporan Berhasil Terkirim
+Setelah berhasil mengirim laporan, warga langsung diarahkan ke beranda dan ditampilkan **toast notification** berwarna hijau yang mengonfirmasi laporan telah diterima dan akan segera diproses kelurahan.
+![Beranda Sukses](public/screenshots/beranda_notifikasi_sukses.png)
+
+### 11. Profil Warga — Riwayat Laporan
+Halaman profil warga menampilkan identitas (nama, NIK tersamarkan, RT/RW), total laporan yang dibuat, serta tabel riwayat lengkap dengan kolom tanggal, subjek/lokasi, foto bukti, dan badge status berwarna.
+![Profil Riwayat](public/screenshots/profil_riwayat.png)
+
+### 12. Profil Warga — Filter Status Laporan
+Warga dapat memfilter riwayat laporan berdasarkan status (**Semua**, **Pending**, **Diproses**, **Selesai**). Jika tidak ada laporan yang cocok, tampil pesan kosong dengan ikon informatif.
+![Profil Filter Status](public/screenshots/profil_filter_status.png)
+
 ---
 
 ## 🗄️ Rancangan Database (ERD Diagram)
