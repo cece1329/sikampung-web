@@ -21,7 +21,7 @@
             <p class="text-blue-100 text-sm mt-1">Laporan Anda akan diteruskan ke Admin Kelurahan Joyotakan.</p>
         </div>
 
-        <form action="{{ route('laporan.store') }}" method="POST" enctype="multipart/form-data" class="p-8 space-y-6">
+        <form action="{{ route('laporan.store') }}" method="POST" enctype="multipart/form-data" class="p-4 sm:p-8 space-y-6">
             @csrf
 
             <div class="space-y-2">
