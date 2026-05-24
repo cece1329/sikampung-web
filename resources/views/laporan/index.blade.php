@@ -108,6 +108,16 @@
                     <a href="#tutorial" class="hover:text-blue-600 transition">Tutorial</a>
                 </div>
 
+                <!-- Mobile Hamburger -->
+                <button id="mobileMenuBtn"
+                    class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-xl bg-white/60 hover:bg-white transition border border-slate-200"
+                    aria-label="Buka menu" aria-expanded="false">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-700" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm1 4a1 1 0 100 2h12a1 1 0 100-2H4z" clip-rule="evenodd" />
+                    </svg>
+                </button>
+            </div>
+
                 @auth
                     <div class="flex items-center gap-3 bg-blue-50 px-4 py-2 rounded-2xl border border-blue-100">
                         <a href="{{ route('laporan.profil') }}" class="flex items-center gap-3 hover:opacity-80 transition cursor-pointer" title="Lihat Profil">
