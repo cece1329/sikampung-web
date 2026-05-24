@@ -101,7 +101,7 @@
                 </span>
             </div>
 
-            <div class="flex items-center gap-7">
+<div class="flex items-center gap-7">
                 <div class="hidden md:flex gap-7 text-[11px] font-bold uppercase tracking-wider text-slate-600 mr-4">
                     <a href="#statistik" class="hover:text-blue-600 transition">Statistik</a>
                     <a href="#berita" class="hover:text-blue-600 transition">Berita</a>
