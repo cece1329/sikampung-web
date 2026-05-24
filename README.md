@@ -93,7 +93,9 @@ Untuk keperluan pengujian, sistem telah menyediakan akun demo default berikut se
 * **Hak Akses**: Warga dapat membuat laporan pengaduan baru, melihat status pengaduan pribadi, dan mencari/memfilter riwayat laporan di halaman profil mereka.
 
 ### 2. Login sebagai Admin Kelurahan
-* **Halaman Login**: Masuk langsung via URL khusus admin di `http://127.0.0.1:8000/admin/login`.
+* **Halaman Login**: 
+  * **Cara 1 (URL)**: Masuk langsung via URL khusus admin di `http://127.0.0.1:8000/admin/login`.
+  * **Cara 2 (Shortcut Rahasia)**: Pada Halaman Utama (Beranda), ketik kata **`joyo`** langsung di keyboard Anda. Sistem akan mendeteksi ketukan tersebut dan langsung mengarahkan Anda ke Halaman Login Admin secara otomatis!
 * **Kredensial**:
   * **PIN**: `123456`
 * **Hak Akses**: Admin dapat mengakses dashboard kelurahan, mengubah status laporan (Proses ➔ Selesai), menghapus laporan, serta mengelola data kependudukan warga (Tambah, Edit, dan Hapus Warga).
