@@ -90,6 +90,7 @@
                                 <th class="py-3 px-4 md:px-6 text-[11px] md:text-xs font-bold text-slate-500 uppercase">Nama</th>
                                 <th class="py-3 px-4 md:px-6 text-[11px] md:text-xs font-bold text-slate-500 uppercase">NIK</th>
                                 <th class="py-3 px-4 md:px-6 text-[11px] md:text-xs font-bold text-slate-500 uppercase text-center">RT/RW</th>
+                                <th class="py-3 px-4 md:px-6 text-[11px] md:text-xs font-bold text-slate-500 uppercase text-center">Aksi</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-slate-100">
