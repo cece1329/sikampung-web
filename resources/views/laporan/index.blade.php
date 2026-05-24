@@ -703,8 +703,26 @@
 
                 </div>
 
+                {{-- Peta Lokasi Kelurahan Joyotakan --}}
+                <div class="mt-12 rounded-3xl overflow-hidden border border-white/10 shadow-2xl" data-aos="fade-up">
+                    <div class="px-2 pt-2 pb-1 bg-white/5 flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse inline-block"></span>
+                        <p class="text-[10px] font-bold uppercase tracking-widest text-slate-400">📍 Lokasi Kelurahan Joyotakan</p>
+                    </div>
+                    <iframe
+                        src="https://maps.google.com/maps?q=Kelurahan+Joyotakan,+Serengan,+Surakarta&output=embed"
+                        width="100%"
+                        height="260"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        class="w-full grayscale hover:grayscale-0 transition duration-500">
+                    </iframe>
+                </div>
+
                 <div
-                    class="border-t border-white/10 mt-14 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                    class="border-t border-white/10 mt-10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
 
                     <p class="text-slate-500 text-xs tracking-widest uppercase font-bold">
                         © 2026 SiKampung • Surakarta
