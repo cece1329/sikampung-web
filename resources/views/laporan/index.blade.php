@@ -160,7 +160,8 @@
                 @endauth
             </div>
 
-        </div>
+</div>
+
     <script>
         (function () {
             const btn = document.getElementById('mobileMenuBtn');
@@ -185,6 +186,7 @@
     </script>
 
     </nav>
+
 
     @if(session('success'))
     <div id="toast-success" class="fixed top-24 left-1/2 transform -translate-x-1/2 z-[60] flex items-start gap-4 w-11/12 max-w-lg p-5 text-slate-800 bg-white rounded-2xl shadow-2xl border-l-8 border-green-500" role="alert" data-aos="fade-down">
@@ -213,7 +215,8 @@
     </script>
     @endif
 
-    <header class="relative min-h-screen flex items-center overflow-hidden">
+    <header class="relative min-h-screen flex items-center overflow-hidden pt-20">
+
 
         <div class="absolute inset-0 z-0">
 
