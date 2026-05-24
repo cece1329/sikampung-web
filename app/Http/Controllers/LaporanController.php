@@ -205,7 +205,9 @@ class LaporanController extends Controller
             'rt' => $request->rt,
             'rw' => $request->rw,
             'role' => 'warga',
+            // mengikuti pola create: pin = nik
             'password' => Hash::make($request->nik),
+            'pin' => $request->nik,
         ]);
         return redirect()->back();
     }
