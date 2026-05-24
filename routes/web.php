@@ -39,5 +39,6 @@ Route::middleware(['auth'])->group(function () {
         // Data Penduduk (CRUD)
         Route::get('/warga', [LaporanController::class, 'dataWarga'])->name('admin.warga');
         Route::post('/warga', [LaporanController::class, 'storeWarga'])->name('admin.warga.store');
+        Route::patch('/warga/{id}', [LaporanController::class, 'updateWarga'])->name('admin.warga.update');
     });
 });
