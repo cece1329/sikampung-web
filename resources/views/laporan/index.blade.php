@@ -118,6 +118,23 @@
                 </button>
             </div>
 
+            <!-- Mobile Dropdown -->
+            <div id="mobileMenu" class="md:hidden hidden border-t border-slate-200 bg-white/80 backdrop-blur-md">
+                <div class="max-w-7xl mx-auto px-6 py-3">
+                    <a href="#statistik" class="block text-[11px] font-bold uppercase tracking-wider text-slate-600 hover:text-blue-600 transition py-2">Statistik</a>
+                    <a href="#berita" class="block text-[11px] font-bold uppercase tracking-wider text-slate-600 hover:text-blue-600 transition py-2">Berita</a>
+                    <a href="#tutorial" class="block text-[11px] font-bold uppercase tracking-wider text-slate-600 hover:text-blue-600 transition py-2">Tutorial</a>
+                    <div class="border-t border-slate-200 mt-2 pt-2">
+                        @auth
+                            <a href="{{ route('laporan.profil') }}" class="block text-sm font-bold text-blue-900 bg-blue-50 border border-blue-100 rounded-2xl px-4 py-2 hover:opacity-80 transition mb-2">Lihat Profil</a>
+                            <a href="{{ route('logout') }}" class="block text-sm font-bold text-red-600 hover:text-red-700 py-2">KELUAR</a>
+                        @else
+                            <a href="{{ route('login') }}" class="block text-sm font-bold text-white bg-blue-600 hover:bg-blue-700 rounded-2xl px-4 py-2 transition">Masuk</a>
+                        @endauth
+                    </div>
+                </div>
+            </div>
+
                 @auth
                     <div class="flex items-center gap-3 bg-blue-50 px-4 py-2 rounded-2xl border border-blue-100">
                         <a href="{{ route('laporan.profil') }}" class="flex items-center gap-3 hover:opacity-80 transition cursor-pointer" title="Lihat Profil">
