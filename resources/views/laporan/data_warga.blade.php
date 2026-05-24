@@ -127,7 +127,19 @@
                                             @csrf
                                             @method('PATCH')
 
-                                            <!-- inputs -->
+                                            <div>
+                                                <label class="block text-sm font-bold text-slate-700 mb-2">Nama Lengkap</label>
+                                                <input type="text" name="name" value="{{ $w->name }}"
+                                                    class="w-full border-slate-200 border-2 p-3 rounded-xl focus:border-blue-500 focus:outline-none transition"
+                                                    required>
+                                            </div>
+
+                                            <div>
+                                                <label class="block text-sm font-bold text-slate-700 mb-2">NIK (16 digit)</label>
+                                                <input type="text" name="nik" value="{{ $w->nik }}"
+                                                    class="w-full border-slate-200 border-2 p-3 rounded-xl focus:border-blue-500 focus:outline-none transition"
+                                                    required>
+                                            </div>
                                         </form>
                                     </td>
                                 </tr>
