@@ -80,7 +80,7 @@
             </div>
 
             <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
-                <div class="p-6 border-b border-slate-100">
+                <div class="p-4 md:p-6 border-b border-slate-100">
                     <h3 class="font-bold text-slate-800">Daftar Warga Terdaftar</h3>
                 </div>
                 <div class="overflow-x-auto">
