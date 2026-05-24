@@ -209,6 +209,10 @@ class LaporanController extends Controller
             'password' => Hash::make($request->nik),
             'pin' => $request->nik,
         ]);
-        return redirect()->back();
+        return redirect()->back();    }
+
+    public function updateWarga(Request $request, $id)
+    {
+        // todo: update logic
     }
 }
