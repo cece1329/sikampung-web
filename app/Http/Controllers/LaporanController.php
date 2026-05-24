@@ -221,5 +221,17 @@ class LaporanController extends Controller
         ]);
 
         $user = User::where('role', 'warga')->findOrFail($id);
+
+        $user->update([
+            'name' => $request->name,
+            'nik' => $request->nik,
+            'rt' => $request->rt,
+            'rw' => $request->rw,
+            // tetap pin = nik
+            'pin' => $request->nik,
+            'password' => Hash::make($request->nik),
+        ]);
+
+        return redirect()->route('admin.warga');
     }
 }
