@@ -14,7 +14,7 @@
     </style>
 </head>
 
-<body class="bg-slate-50 min-h-screen py-12 px-6">
+<body class="bg-slate-50 min-h-screen py-8 px-4 sm:py-12 sm:px-6 overflow-x-hidden">
     <div class="max-w-2xl mx-auto bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
         <div class="bg-blue-600 p-8 text-white">
             <h2 class="text-2xl font-bold">Formulir Pengaduan Warga</h2>
