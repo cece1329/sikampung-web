@@ -234,4 +234,12 @@ class LaporanController extends Controller
 
         return redirect()->route('admin.warga');
     }
+
+    public function destroyWarga($id)
+    {
+        $user = User::where('role', 'warga')->findOrFail($id);
+        $user->delete();
+
+        return redirect()->route('admin.warga');
+    }
 }
