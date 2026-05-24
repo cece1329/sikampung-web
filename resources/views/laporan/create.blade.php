@@ -16,7 +16,7 @@
 
 <body class="bg-slate-50 min-h-screen py-8 px-4 sm:py-12 sm:px-6 overflow-x-hidden">
     <div class="max-w-2xl mx-auto bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
-        <div class="bg-blue-600 p-8 text-white">
+<div class="bg-blue-600 p-8 text-white">
             <h2 class="text-2xl font-bold">Formulir Pengaduan Warga</h2>
             <p class="text-blue-100 text-sm mt-1">Laporan Anda akan diteruskan ke Admin Kelurahan Joyotakan.</p>
         </div>
