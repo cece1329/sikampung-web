@@ -213,6 +213,11 @@ class LaporanController extends Controller
 
     public function updateWarga(Request $request, $id)
     {
-        // todo: update logic
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'nik' => 'required|numeric|digits:16|unique:users,nik,' . $id,
+            'rt' => 'required|string|max:5',
+            'rw' => 'required|string|max:5',
+        ]);
     }
 }
