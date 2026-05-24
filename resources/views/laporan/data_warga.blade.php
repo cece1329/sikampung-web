@@ -4,34 +4,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kelola Penduduk | Joyotakan Digital</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body class="bg-slate-50">
-    <nav class="bg-white shadow-sm border-b border-slate-200 p-4 flex justify-between items-center">
-        <div class="flex items-center gap-2">
-            <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-                <span class="text-white font-bold">J</span>
+    <nav class="bg-white shadow-sm border-b border-slate-200 p-4 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+                    <span class="text-white font-bold">J</span>
+                </div>
+                <h1 class="text-xl font-bold text-slate-800">ADMIN <span class="text-blue-600">JOYOTAKAN</span></h1>
             </div>
-            <h1 class="text-xl font-bold text-slate-800">ADMIN <span class="text-blue-600">JOYOTAKAN</span></h1>
+
+            <!-- Mobile Hamburger -->
+            <button id="mobileMenuBtn"
+                class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg bg-slate-100 hover:bg-slate-200 transition"
+                aria-label="Buka menu" aria-expanded="false">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-700" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm1 4a1 1 0 100 2h12a1 1 0 100-2H4z" clip-rule="evenodd" />
+                </svg>
+            </button>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-4">
+                <a href="{{ route('admin.dashboard') }}" class="text-sm font-bold text-blue-600 hover:underline">
+                    ← Kembali ke Dashboard
+                </a>
+            </div>
         </div>
-        <a href="{{ route('admin.dashboard') }}" class="text-sm font-bold text-blue-600 hover:underline">
-            ← Kembali ke Dashboard
-        </a>
+
+        <!-- Mobile Dropdown -->
+        <div id="mobileMenu" class="md:hidden hidden border-t border-slate-200">
+
+            <div class="max-w-7xl mx-auto p-3">
+                <a href="{{ route('admin.dashboard') }}" class="block text-sm font-bold text-blue-600 hover:underline py-2">
+                    ← Kembali ke Dashboard
+                </a>
+            </div>
+        </div>
+
+        <script>
+            (function () {
+                const btn = document.getElementById('mobileMenuBtn');
+                const menu = document.getElementById('mobileMenu');
+                if (!btn || !menu) return;
+                btn.addEventListener('click', function () {
+                    const isHidden = menu.classList.contains('hidden');
+                    if (isHidden) {
+                        menu.classList.remove('hidden');
+                        btn.setAttribute('aria-expanded', 'true');
+                    } else {
+                        menu.classList.add('hidden');
+                        btn.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            })();
+        </script>
     </nav>
 
-    <div class="p-8">
+
+    <div class="p-4 md:p-8">
         <div class="max-w-4xl mx-auto">
 
-            <div class="mb-8">
-                <h2 class="text-3xl font-extrabold text-slate-900">Manajemen Penduduk</h2>
+            <div class="mb-6 md:mb-8">
+                <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900">Manajemen Penduduk</h2>
                 <p class="text-slate-500">Input data warga Joyotakan agar mereka dapat mengakses sistem laporan.</p>
             </div>
 
-            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 mb-8">
-                <h3 class="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2">
+            <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-200 mb-6 md:mb-8">
+                <h3 class="text-lg md:text-xl font-bold text-slate-800 mb-4 flex items-center gap-2">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-600" viewBox="0 0 20 20"
                         fill="currentColor">
                         <path
@@ -40,9 +83,11 @@
                     Tambah Warga Baru
                 </h3>
 
+
                 <form action="{{ route('admin.warga.store') }}" method="POST"
-                    class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                     @csrf
+
                     <div class="md:col-span-2">
                         <label class="block text-sm font-bold text-slate-700 mb-2">Nama Lengkap</label>
                         <input type="text" name="name"
@@ -83,6 +128,7 @@
                 <div class="p-4 md:p-6 border-b border-slate-100">
                     <h3 class="font-bold text-slate-800">Daftar Warga Terdaftar</h3>
                 </div>
+
                 <div class="overflow-x-auto">
                     <table class="w-full text-left">
                         <thead class="bg-slate-50">
@@ -154,6 +200,18 @@
                                                     class="w-full border-slate-200 border-2 p-3 rounded-xl focus:border-blue-500 focus:outline-none transition"
                                                     required>
                                             </div>
+
+                                            <div class="md:col-span-2 flex flex-col sm:flex-row items-stretch gap-3">
+                                                <button type="submit"
+                                                    class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-5 rounded-xl flex-1">
+                                                    Simpan
+                                                </button>
+                                                <button type="button"
+                                                    class="bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold py-3 px-5 rounded-xl flex-1"
+                                                    onclick="document.getElementById('edit-{{ $w->id }}').classList.add('hidden')">
+                                                    Batal
+                                                </button>
+                                            </div>
                                         </form>
                                     </td>
                                 </tr>
@@ -167,3 +225,4 @@
 </body>
 
 </html>
+
