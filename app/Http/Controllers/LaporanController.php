@@ -219,5 +219,7 @@ class LaporanController extends Controller
             'rt' => 'required|string|max:5',
             'rw' => 'required|string|max:5',
         ]);
+
+        $user = User::where('role', 'warga')->findOrFail($id);
     }
 }
