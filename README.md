@@ -170,6 +170,26 @@ Halaman profil warga menampilkan identitas (nama, NIK tersamarkan, RT/RW), total
 Warga dapat memfilter riwayat laporan berdasarkan status (**Semua**, **Pending**, **Diproses**, **Selesai**). Jika tidak ada laporan yang cocok, tampil pesan kosong dengan ikon informatif.
 ![Profil Filter Status](public/screenshots/profil_filter_status.png)
 
+### 13. Dashboard Admin — Manajemen Laporan
+Pusat kendali admin untuk mengelola seluruh pengaduan warga. Tabel menampilkan tanggal, nama pelapor beserta NIK, judul aduan, foto bukti, badge status berwarna (**Ditinjau / Diproses / Selesai**), serta 3 tombol aksi: **Proses**, **Selesai**, dan **Hapus**.
+![Admin Dashboard Laporan](public/screenshots/admin_dashboard_laporan.png)
+
+### 14. Dashboard Admin — Filter Status Laporan
+Admin dapat memfilter laporan berdasarkan status menggunakan dropdown dan tombol **Filter** / **Reset**. Jika tidak ada laporan pada status yang dipilih, tampil pesan kosong.
+![Admin Dashboard Filter](public/screenshots/admin_dashboard_filter.png)
+
+### 15. Beranda — Statistik Laporan Warga (Live Data)
+Seksi statistik real-time di beranda menampilkan 4 kartu angka: **Total Laporan**, **Selesai**, **Diproses**, dan **Cakupan RW**. Data diperbarui otomatis sesuai kondisi database terkini.
+![Beranda Statistik](public/screenshots/beranda_statistik.png)
+
+### 16. Beranda — Panduan Cara Membuat Laporan
+Seksi tutorial yang menjelaskan 4 langkah mudah membuat laporan: Login Sistem → Isi Form Aduan → Upload Bukti → Kirim Laporan. Disajikan dalam tampilan kartu bergradasi yang bersih.
+![Beranda Tutorial](public/screenshots/beranda_tutorial.png)
+
+### 17. Beranda — Warta Terkini (Berita Kelurahan)
+Seksi berita menampilkan 3 artikel kegiatan terkini Kelurahan Joyotakan (Posyandu Remaja, Kerja Bakti Lingkungan, Pelatihan UMKM Digital) dengan foto, deskripsi singkat, dan tanggal publikasi.
+![Beranda Berita](public/screenshots/beranda_berita.png)
+
 ---
 
 ## 🗄️ Rancangan Database (ERD Diagram)
