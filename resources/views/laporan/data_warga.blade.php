@@ -106,6 +106,16 @@
                                                 onclick="document.getElementById('edit-{{ $w->id }}').classList.remove('hidden')">
                                                 Edit
                                             </button>
+
+                                            <form action="{{ route('admin.warga.destroy', $w->id) }}" method="POST"
+                                                onsubmit="return confirm('Hapus warga ini?')">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit"
+                                                    class="px-3 py-1 rounded-lg bg-red-50 text-red-700 font-bold text-[11px] md:text-xs">
+                                                    Hapus
+                                                </button>
+                                            </form>
                                         </div>
                                     </td>
                                 </tr>
