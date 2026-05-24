@@ -161,6 +161,29 @@
             </div>
 
         </div>
+    <script>
+        (function () {
+            const btn = document.getElementById('mobileMenuBtn');
+            const menu = document.getElementById('mobileMenu');
+            if (!btn || !menu) return;
+
+            // pastikan state awal sesuai
+            btn.setAttribute('aria-expanded', 'false');
+            menu.classList.add('hidden');
+
+            btn.addEventListener('click', function () {
+                const isHidden = menu.classList.contains('hidden');
+                if (isHidden) {
+                    menu.classList.remove('hidden');
+                    btn.setAttribute('aria-expanded', 'true');
+                } else {
+                    menu.classList.add('hidden');
+                    btn.setAttribute('aria-expanded', 'false');
+                }
+            });
+        })();
+    </script>
+
     </nav>
 
     @if(session('success'))
