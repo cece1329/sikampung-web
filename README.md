@@ -1,58 +1,183 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🏘️ SiKampung Joyotakan - Sistem Informasi & Pelayanan Warga
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+**SiKampung Joyotakan** adalah platform digital berbasis web yang dirancang khusus untuk memfasilitasi pelaporan keluhan warga serta manajemen data kependudukan secara efisien di Kelurahan Joyotakan. Sistem ini mempertemukan warga secara langsung dengan jajaran admin kelurahan untuk mempercepat penanganan masalah lingkungan, sosial, maupun infrastruktur.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## ✨ Fitur & Kelebihan Web
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Sistem Informasi SiKampung didesain dengan prinsip kemudahan penggunaan (user-friendly) serta tampilan yang premium dan responsif:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+1. **Autentikasi Praktis Tanpa Ribet**:
+   * **Warga**: Cukup masuk menggunakan 16-digit **NIK (Nomor Induk Kependudukan)** tanpa perlu mengingat password rumit.
+   * **Admin**: Masuk secara cepat menggunakan **PIN** rahasia yang aman.
+2. **Statistik Real-time**: Beranda menampilkan statistik terkini laporan warga (Total Laporan, Laporan Diproses, dan Laporan Selesai).
+3. **Form Pengaduan Interaktif**: Pengaduan dilengkapi dengan judul, lokasi, deskripsi rinci, serta lampiran foto bukti.
+4. **Pencarian & Validasi Pintar**: Baik warga maupun admin dapat melakukan pencarian laporan dan memfilter laporan berdasarkan status (Semua, Pending, Proses, Selesai).
+5. **Manajemen Akun Warga Terpadu (CRUD)**: Admin memiliki kendali penuh untuk menambah, mengedit (secara inline tanpa pindah halaman), serta menghapus akun warga secara instan.
+6. **Desain Modern & Responsif**: Menggunakan Tailwind CSS dengan ornamen batik modern khas Nusantara, navigasi menu hamburger pada tampilan ponsel, serta dialog/toast interaktif yang memanjakan mata.
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 🛠️ Cara Menjalankan Aplikasi
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Ikuti panduan langkah demi langkah di bawah ini untuk menjalankan platform di komputer lokal Anda:
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+### Prerequisites (Prasyarat)
+* **Laragon** atau **XAMPP** (PHP >= 8.2 & MySQL)
+* **Composer**
+* **Node.js & NPM**
 
-## Agentic Development
+### Langkah Instalasi
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+1. **Clone & Masuk ke Folder Project**:
+   ```bash
+   git clone https://github.com/cece1329/sikampung-web.git
+   cd sikampung
+   ```
 
-```bash
-composer require laravel/boost --dev
+2. **Instal Dependensi PHP**:
+   ```bash
+   composer install
+   ```
 
-php artisan boost:install
-```
+3. **Salin File Konfigurasi `.env`**:
+   ```bash
+   cp .env.example .env
+   ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+4. **Generate Application Key**:
+   ```bash
+   php artisan key:generate
+   ```
 
-## Contributing
+5. **Konfigurasi Database di `.env`**:
+   Sesuaikan baris-baris berikut dengan setelan database lokal Anda (misalnya Laragon):
+   ```env
+   DB_CONNECTION=mysql
+   DB_HOST=127.0.0.1
+   DB_PORT=3306
+   DB_DATABASE=sikampung
+   DB_USERNAME=root
+   DB_PASSWORD=root
+   ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+6. **Migrasi Database dan Seed Data Awal**:
+   Perintah ini akan membuat semua tabel yang dibutuhkan dan mengisi data akun uji coba untuk warga dan admin:
+   ```bash
+   php artisan migrate:fresh --seed
+   ```
 
-## Code of Conduct
+7. **Menghubungkan Storage Link**:
+   Agar file foto keluhan warga dapat tampil di halaman web, buat symbolic link untuk direktori storage:
+   ```bash
+   php artisan storage:link
+   ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+8. **Jalankan Aplikasi**:
+   ```bash
+   php artisan serve
+   ```
+   Buka peramban (browser) Anda lalu akses url **`http://127.0.0.1:8000`**.
 
-## Security Vulnerabilities
+---
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## 🔑 Panduan Login Pengguna (Akun Demo)
 
-## License
+Untuk keperluan pengujian, sistem telah menyediakan akun demo default berikut setelah Anda menjalankan seeder:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### 1. Login sebagai Warga (Citizen)
+* **Halaman Login**: Akses menu **Masuk** di pojok kanan atas beranda atau langsung ke `http://127.0.0.1:8000/login`.
+* **Kredensial**:
+  * **NIK**: `1234567890123456`
+* **Hak Akses**: Warga dapat membuat laporan pengaduan baru, melihat status pengaduan pribadi, dan mencari/memfilter riwayat laporan di halaman profil mereka.
+
+### 2. Login sebagai Admin Kelurahan
+* **Halaman Login**: Masuk langsung via URL khusus admin di `http://127.0.0.1:8000/admin/login`.
+* **Kredensial**:
+  * **PIN**: `123456`
+* **Hak Akses**: Admin dapat mengakses dashboard kelurahan, mengubah status laporan (Proses ➔ Selesai), menghapus laporan, serta mengelola data kependudukan warga (Tambah, Edit, dan Hapus Warga).
+
+---
+
+## 💼 Sistem Manajemen
+
+### 📈 Manajemen Pengaduan (Laporan)
+Setiap keluhan warga melewati tiga tahap status yang dikendalikan oleh Admin Kelurahan:
+1. **Pending**: Laporan baru masuk dan menunggu peninjauan admin.
+2. **Proses**: Laporan sedang ditindaklanjuti oleh petugas kelurahan di lapangan.
+3. **Selesai**: Laporan telah sukses ditangani dan diselesaikan. Warga menerima notifikasi visual yang melegakan.
+
+### 👥 Manajemen Warga (CRUD Penduduk)
+Admin kelurahan dapat melakukan manajemen data kependudukan:
+* **Tambah Warga**: Menambahkan nama, NIK (16 digit), RT, dan RW. Secara otomatis sistem akan mengeset password awal dan PIN warga sama dengan NIK mereka.
+* **Edit Warga**: Mengubah data profil warga secara langsung di tabel daftar warga melalui form inline editor yang dinamis.
+* **Hapus Warga**: Menghapus data akun warga yang sudah tidak terdaftar di kelurahan.
+
+---
+
+## 📸 Screenshot Halaman Aplikasi
+
+Berikut adalah tampilan visual antarmuka aplikasi SiKampung Joyotakan:
+
+### 1. Halaman Beranda (Landing Page)
+Menampilkan statistik keluhan warga yang real-time dengan latar belakang batik premium.
+![Landing Page](public/screenshots/landing_page.png)
+
+### 2. Halaman Login Warga
+Tampilan login minimalis yang hanya memerlukan 16 digit NIK.
+![Login Warga](public/screenshots/warga_login.png)
+
+### 3. Profil & Riwayat Laporan Warga
+Tempat warga melihat seluruh keluhan yang pernah dikirimkan beserta statusnya dan fitur pencarian.
+![Profil Warga](public/screenshots/warga_profile.png)
+
+### 4. Form Kirim Pengaduan Baru
+Formulir pengaduan interaktif yang dilengkapi pratinjau (preview) unggahan foto.
+![Form Keluhan](public/screenshots/tambah_laporan.png)
+
+### 5. Halaman Login Admin
+Halaman login khusus bagi administrator kelurahan dengan sistem input PIN.
+![Login Admin](public/screenshots/admin_login.png)
+
+### 6. Dashboard Administrator Kelurahan
+Pusat kontrol admin untuk memantau, mencari, memfilter, serta mengubah status keluhan warga.
+![Dashboard Admin](public/screenshots/admin_dashboard.png)
+
+### 7. Manajemen Data Kependudukan (CRUD Warga)
+Halaman admin untuk mengelola (Tambah, Edit secara inline, dan Hapus) data warga terdaftar.
+![Manajemen Warga](public/screenshots/admin_warga.png)
+
+---
+
+## 🗄️ Rancangan Database (ERD Diagram)
+
+Aplikasi didukung oleh basis data relasional yang efisien. Relasi utama terjadi secara satu-ke-banyak (*One-to-Many*) antara tabel `users` dan `laporans`.
+
+![Rancangan Database](public/screenshots/database_design.png)
+
+### Detail Struktur Tabel:
+
+#### 1. Tabel `users`
+Menampung data akun admin kelurahan serta data warga terdaftar.
+* `id` (Primary Key, Auto Increment)
+* `name` (string) - Nama lengkap warga / admin.
+* `email` (string, unique, nullable) - Alamat email opsional.
+* `nik` (string, unique, nullable) - NIK 16 digit untuk warga login.
+* `pin` (string, nullable) - PIN rahasia untuk admin login atau sinkronisasi data.
+* `rt` (string, 5) - Rukun Tetangga.
+* `rw` (string, 5) - Rukun Warga.
+* `role` (enum: `'admin'`, `'warga'`) - Peran pengguna dalam sistem.
+* `password` (string) - Hash password default.
+* `timestamps` (`created_at`, `updated_at`)
+
+#### 2. Tabel `laporans`
+Menampung seluruh pengaduan warga kelurahan.
+* `id` (Primary Key, Auto Increment)
+* `user_id` (Foreign Key, terhubung ke `users.id` dengan opsi *cascade on delete*) - Menunjukkan pembuat laporan.
+* `judul` (string) - Judul keluhan/masalah.
+* `lokasi` (string) - Alamat atau titik lokasi kejadian.
+* `description` (text) - Penjelasan detail kronologi keluhan.
+* `foto` (string, nullable) - Path lokasi foto bukti keluhan di server.
+* `status` (enum: `'pending'`, `'proses'`, `'selesai'`) - Status penanganan aduan.
+* `timestamps` (`created_at`, `updated_at`)

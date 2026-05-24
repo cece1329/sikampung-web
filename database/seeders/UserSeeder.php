@@ -15,14 +15,16 @@ class UserSeeder extends Seeder
             'email' => 'admin@joyotakan.com',
             'pin' => '123456', // PIN saktimu!
             'role' => 'admin',
+            'password' => bcrypt('password'),
         ]);
 
         // Bikin Akun Warga buat Tes
         User::create([
             'name' => 'Warga Joyotakan',
             'email' => 'warga@joyotakan.com',
-            'nik' => '330701', // NIK buat login warga
+            'nik' => '1234567890123456', // NIK 16 digit buat login warga
             'role' => 'warga',
+            'password' => bcrypt('password'),
         ]);
     }
 }
