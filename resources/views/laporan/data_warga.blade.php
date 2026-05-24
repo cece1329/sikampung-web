@@ -119,6 +119,18 @@
                                         </div>
                                     </td>
                                 </tr>
+
+                                <tr class="hidden" id="edit-{{ $w->id }}">
+                                    <td colspan="4" class="px-4 md:px-6 py-4 bg-slate-50">
+                                        <form action="{{ route('admin.warga.update', $w->id) }}" method="POST"
+                                            class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
+                                            @csrf
+                                            @method('PATCH')
+
+                                            <!-- inputs -->
+                                        </form>
+                                    </td>
+                                </tr>
                             @endforeach
                         </tbody>
                     </table>
