@@ -206,6 +206,7 @@ Aplikasi didukung oleh basis data relasional yang efisien. Relasi utama terjadi 
 
 #### 1. Tabel `users`
 Menampung data akun admin kelurahan serta data warga terdaftar.
+!Database Users
 * `id` (Primary Key, Auto Increment)
 * `name` (string) - Nama lengkap warga / admin.
 * `email` (string, unique, nullable) - Alamat email opsional.
@@ -219,6 +220,7 @@ Menampung data akun admin kelurahan serta data warga terdaftar.
 
 #### 2. Tabel `laporans`
 Menampung seluruh pengaduan warga kelurahan.
+!Database Laporans
 * `id` (Primary Key, Auto Increment)
 * `user_id` (Foreign Key, terhubung ke `users.id` dengan opsi *cascade on delete*) - Menunjukkan pembuat laporan.
 * `judul` (string) - Judul keluhan/masalah.
