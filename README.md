@@ -152,7 +152,7 @@ Halaman admin untuk mengelola (Tambah, Edit secara inline, dan Hapus) data warga
 
 ### 8. Form Tambah Warga & Daftar Warga Terdaftar
 Formulir pendaftaran data warga baru (nama, NIK 16 digit, RT, RW) beserta tabel daftar warga yang dilengkapi tombol **Edit** dan **Hapus** pada kolom aksi.
-![Form Tambah Warga](public/screenshots/admin_warga_form.png)
+![Form Tambah Warga](public/screenshots/form_admin_warga.png.png)
 
 ### 9. Form Pengaduan Warga (Tambah Laporan)
 Formulir pengaduan yang dapat diisi warga mencakup Subjek Laporan, Wilayah RW, Detail Lokasi, Deskripsi masalah, serta unggahan **Foto Bukti** dengan pratinjau gambar secara langsung.
@@ -172,7 +172,7 @@ Warga dapat memfilter riwayat laporan berdasarkan status (**Semua**, **Pending**
 
 ### 13. Dashboard Admin — Manajemen Laporan
 Pusat kendali admin untuk mengelola seluruh pengaduan warga. Tabel menampilkan tanggal, nama pelapor beserta NIK, judul aduan, foto bukti, badge status berwarna (**Ditinjau / Diproses / Selesai**), serta 3 tombol aksi: **Proses**, **Selesai**, dan **Hapus**.
-![Admin Dashboard Laporan](public/screenshots/admin_dashboard_laporan.jpeg)
+![Admin Dashboard Laporan](public/screenshots/laporan_dashboard_admin.png)
 
 ### 14. Dashboard Admin — Filter Status Laporan
 Admin dapat memfilter laporan berdasarkan status menggunakan dropdown dan tombol **Filter** / **Reset**. Jika tidak ada laporan pada status yang dipilih, tampil pesan kosong.
