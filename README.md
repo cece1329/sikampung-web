@@ -263,3 +263,45 @@ Menyimpan seluruh pengaduan warga kelurahan beserta status penanganannya.
 #### 4. Detail Struktur / Indeks Tambahan
 Pratinjau detail struktur tabel dan indeks yang terdaftar pada database sistem.
 ![Struktur Indeks](public/screenshots/database/Screenshot 2026-05-26 083258.png)
+
+#### 5. Detail Tipe Data & Spesifikasi Kolom
+Berikut adalah tabel spesifikasi teknis mengenai tipe data (`BIGINT`, `VARCHAR`, `TEXT`, `ENUM`, `TIMESTAMP`, dll.) yang digunakan pada tabel utama sistem:
+
+##### A. Tabel `users` (Menyimpan data admin & warga)
+| Nama Kolom | Tipe Data | Atribut / Keterangan |
+| :--- | :--- | :--- |
+| `id` | `BIGINT UNSIGNED` | Primary Key, Auto Increment, unik untuk setiap pengguna |
+| `name` | `VARCHAR(255)` | Nama lengkap warga atau admin |
+| `email` | `VARCHAR(255)` | Alamat email (Unik, Nullable) |
+| `email_verified_at`| `TIMESTAMP` | Waktu verifikasi email (Nullable) |
+| `nik` | `VARCHAR(255)` | Nomor Induk Kependudukan 16 digit (Unik, Nullable) |
+| `pin` | `VARCHAR(255)` | Kode PIN rahasia untuk masuk admin (Nullable) |
+| `rt` | `VARCHAR(5)` | Rukun Tetangga (Nullable) |
+| `rw` | `VARCHAR(5)` | Rukun Warga (Nullable) |
+| `role` | `ENUM('admin', 'warga')` | Peran pengguna dalam sistem (Default: `'warga'`) |
+| `password` | `VARCHAR(255)` | Hash password keamanan akun |
+| `remember_token` | `VARCHAR(100)` | Token sesi untuk fitur "Remember Me" (Nullable) |
+| `created_at` | `TIMESTAMP` | Waktu pembuatan baris data (Nullable) |
+| `updated_at` | `TIMESTAMP` | Waktu perubahan baris data terakhir (Nullable) |
+
+##### B. Tabel `laporans` (Menyimpan keluhan/aduan warga)
+| Nama Kolom | Tipe Data | Atribut / Keterangan |
+| :--- | :--- | :--- |
+| `id` | `BIGINT UNSIGNED` | Primary Key, Auto Increment, unik untuk setiap laporan |
+| `user_id` | `BIGINT UNSIGNED` | Foreign Key ke `users(id)`, berelasi secara *cascade* jika pengguna dihapus |
+| `judul` | `VARCHAR(255)` | Judul singkat keluhan warga |
+| `lokasi` | `VARCHAR(255)` | Lokasi spesifik tempat terjadinya keluhan |
+| `description` | `TEXT` | Deskripsi detail keluhan dari warga |
+| `foto` | `VARCHAR(255)` | Nama file/path foto bukti keluhan yang diunggah (Nullable) |
+| `status` | `ENUM('pending', 'proses', 'selesai')` | Status penanganan aduan (Default: `'pending'`) |
+| `created_at` | `TIMESTAMP` | Waktu laporan dikirimkan (Nullable) |
+| `updated_at` | `TIMESTAMP` | Waktu pembaruan status laporan terakhir (Nullable) |
+
+##### C. Tabel Pendukung / Sistem Laravel
+* **`sessions`**: Menyimpan sesi pengguna aktif (`id` `VARCHAR(255)` primary, `user_id` `BIGINT UNSIGNED` index, `ip_address` `VARCHAR(45)`, `user_agent` `TEXT`, `payload` `LONGTEXT`, `last_activity` `INT` index).
+* **`password_reset_tokens`**: Token reset sandi keamanan (`email` `VARCHAR(255)` primary, `token` `VARCHAR(255)`, `created_at` `TIMESTAMP`).
+* **`jobs`**: Antrean pekerjaan sistem (`id` `BIGINT UNSIGNED` primary, `queue` `VARCHAR(255)` index, `payload` `LONGTEXT`, `attempts` `TINYINT UNSIGNED`, `reserved_at` `INT UNSIGNED`, `available_at` `INT UNSIGNED`, `created_at` `INT UNSIGNED`).
+* **`job_batches`**: Kelompok antrean kerja (`id` `VARCHAR(255)` primary, `name` `VARCHAR(255)`, `total_jobs` `INT`, `pending_jobs` `INT`, `failed_jobs` `INT`, `failed_job_ids` `LONGTEXT`, `options` `MEDIUMTEXT`, `cancelled_at` `INT`, `created_at` `INT`, `finished_at` `INT`).
+* **`failed_jobs`**: Log kegagalan antrean (`id` `BIGINT UNSIGNED` primary, `uuid` `VARCHAR(255)` unique, `connection` `TEXT`, `queue` `TEXT`, `payload` `LONGTEXT`, `exception` `LONGTEXT`, `failed_at` `TIMESTAMP`).
+* **`cache`**: Data penyimpanan cache (`key` `VARCHAR(255)` primary, `value` `MEDIUMTEXT`, `expiration` `BIGINT` index).
+* **`cache_locks`**: Kunci pencegah balapan data cache (`key` `VARCHAR(255)` primary, `owner` `VARCHAR(255)`, `expiration` `BIGINT` index).
