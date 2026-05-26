@@ -52,41 +52,6 @@ Ikuti panduan langkah demi langkah di bawah ini untuk menjalankan platform di ko
 ### Langkah Instalasi
 
 1. **Clone & Masuk ke Folder Project**:
-```bash
-   git clone [https://github.com/cece1329/sikampung-web.git](https://github.com/cece1329/sikampung-web.git)
-   cd sikampung
-
-**SiKampung Joyotakan** adalah platform digital berbasis web yang dirancang khusus untuk memfasilitasi pelaporan keluhan warga serta manajemen data kependudukan secara efisien di Kelurahan Joyotakan. Sistem ini mempertemukan warga secara langsung dengan jajaran admin kelurahan untuk mempercepat penanganan masalah lingkungan, sosial, maupun infrastruktur.
-
----
-
-## ✨ Fitur & Kelebihan Web
-
-Sistem Informasi SiKampung didesain dengan prinsip kemudahan penggunaan (user-friendly) serta tampilan yang premium dan responsif:
-
-1. **Autentikasi Praktis Tanpa Ribet**:
-   * **Warga**: Cukup masuk menggunakan 16-digit **NIK (Nomor Induk Kependudukan)** tanpa perlu mengingat password rumit.
-   * **Admin**: Masuk secara cepat menggunakan **PIN** rahasia yang aman.
-2. **Statistik Real-time**: Beranda menampilkan statistik terkini laporan warga (Total Laporan, Laporan Diproses, dan Laporan Selesai).
-3. **Form Pengaduan Interaktif**: Pengaduan dilengkapi dengan judul, lokasi, deskripsi rinci, serta lampiran foto bukti.
-4. **Pencarian & Validasi Pintar**: Baik warga maupun admin dapat melakukan pencarian laporan dan memfilter laporan berdasarkan status (Semua, Pending, Proses, Selesai).
-5. **Manajemen Akun Warga Terpadu (CRUD)**: Admin memiliki kendali penuh untuk menambah, mengedit (secara inline tanpa pindah halaman), serta menghapus akun warga secara instan.
-6. **Desain Modern & Responsif**: Menggunakan Tailwind CSS dengan ornamen batik modern khas Nusantara, navigasi menu hamburger pada tampilan ponsel, serta dialog/toast interaktif yang memanjakan mata.
-
----
-
-## 🛠️ Cara Menjalankan Aplikasi
-
-Ikuti panduan langkah demi langkah di bawah ini untuk menjalankan platform di komputer lokal Anda:
-
-### Prerequisites (Prasyarat)
-* **Laragon** atau **XAMPP** (PHP >= 8.2 & MySQL)
-* **Composer**
-* **Node.js & NPM**
-
-### Langkah Instalasi
-
-1. **Clone & Masuk ke Folder Project**:
    ```bash
    git clone https://github.com/cece1329/sikampung-web.git
    cd sikampung
@@ -176,115 +141,125 @@ Admin kelurahan dapat melakukan manajemen data kependudukan:
 
 ## 📸 Screenshot Halaman Aplikasi
 
-Berikut adalah tampilan visual antarmuka aplikasi SiKampung Joyotakan:
+Berikut adalah tampilan visual antarmuka dan struktur database dari aplikasi **SiKampung Joyotakan**:
 
-### 1. Halaman Beranda (Landing Page)
-Menampilkan statistik keluhan warga yang real-time dengan latar belakang batik premium.
-![Landing Page](public/screenshots/landing_page.png)
+### 💻 Tampilan Desktop / Laptop (Responsive Web)
 
-### 2. Halaman Login Warga
-Tampilan login minimalis yang hanya memerlukan 16 digit NIK.
-![Login Warga](public/screenshots/warga_login.png)
+#### 1. Halaman Beranda (Landing Page)
+Menampilkan statistik keluhan warga secara real-time dengan latar belakang batik modern khas Nusantara.
+![Landing Page](public/screenshots/beranda.png)
 
-### 3. Profil & Riwayat Laporan Warga
-Tempat warga melihat seluruh keluhan yang pernah dikirimkan beserta statusnya dan fitur pencarian.
-![Profil Warga](public/screenshots/warga_profile.png)
+#### 2. Form Kirim Pengaduan Baru
+Formulir pengaduan interaktif bagi warga untuk mengirim laporan keluhan beserta lokasi dan unggah foto bukti.
+![Form Keluhan](public/screenshots/formlaporan.png)
 
-### 4. Form Kirim Pengaduan Baru
-Formulir pengaduan interaktif yang dilengkapi pratinjau (preview) unggahan foto.
-![Form Keluhan](public/screenshots/tambah_laporan.png)
+#### 3. Halaman Login Warga
+Halaman login warga yang sangat praktis, cukup menggunakan 16 digit NIK.
+![Login Warga](public/screenshots/loginuser.png)
 
-### 5. Halaman Login Admin
+#### 4. Halaman Login Admin
 Halaman login khusus bagi administrator kelurahan dengan sistem input PIN.
-![Login Admin](public/screenshots/admin_login.png)
+![Login Admin](public/screenshots/loginadmin.png)
 
-### 6. Dashboard Administrator Kelurahan
-Pusat kontrol admin untuk memantau, mencari, memfilter, serta mengubah status keluhan warga.
-![Dashboard Admin](public/screenshots/admin_dashboard.png)
+#### 5. Dashboard Administrator Kelurahan
+Pusat kontrol admin untuk memantau, memfilter, mencari, serta mengubah status keluhan warga secara dinamis.
+![Dashboard Admin](public/screenshots/dashboardadmin.png)
 
-### 7. Manajemen Data Kependudukan (CRUD Warga)
+#### 6. Data Penduduk / Manajemen Warga (CRUD Warga)
 Halaman admin untuk mengelola (Tambah, Edit secara inline, dan Hapus) data warga terdaftar.
-![Manajemen Warga](public/screenshots/admin_warga.png)
+![Manajemen Warga](public/screenshots/datapenduduk.png)
 
-### 8. Form Tambah Warga & Daftar Warga Terdaftar
-Formulir pendaftaran data warga baru (nama, NIK 16 digit, RT, RW) beserta tabel daftar warga yang dilengkapi tombol **Edit** dan **Hapus** pada kolom aksi.
-![Form Tambah Warga](public/screenshots/form_admin_warga.png.png)
+#### 7. Statistik Laporan Warga (Live Data)
+Bagian beranda yang menampilkan data statistik terintegrasi untuk total aduan, proses, dan selesai.
+![Statistik Beranda](public/screenshots/statistik.png)
 
-### 9. Form Pengaduan Warga (Tambah Laporan)
-Formulir pengaduan yang dapat diisi warga mencakup Subjek Laporan, Wilayah RW, Detail Lokasi, Deskripsi masalah, serta unggahan **Foto Bukti** dengan pratinjau gambar secara langsung.
-![Form Pengaduan](public/screenshots/form_pengaduan.png)
+#### 8. Panduan Penggunaan (Tutorial)
+Langkah-langkah mudah bagi warga untuk melaporkan aduan mereka.
+![Tutorial](public/screenshots/tutorial.png)
 
-### 10. Beranda — Notifikasi Laporan Berhasil Terkirim
-Setelah berhasil mengirim laporan, warga langsung diarahkan ke beranda dan ditampilkan **toast notification** berwarna hijau yang mengonfirmasi laporan telah diterima dan akan segera diproses kelurahan.
-![Beranda Sukses](public/screenshots/beranda_notifikasi_sukses.png)
+#### 9. Warta Terkini (Berita Kelurahan)
+Informasi berita terkini seputar kegiatan di Kelurahan Joyotakan.
+![Berita](public/screenshots/berita.png)
 
-### 11. Profil Warga — Riwayat Laporan
-Halaman profil warga menampilkan identitas (nama, NIK tersamarkan, RT/RW), total laporan yang dibuat, serta tabel riwayat lengkap dengan kolom tanggal, subjek/lokasi, foto bukti, dan badge status berwarna.
-![Profil Riwayat](public/screenshots/profil_riwayat.png)
+#### 10. Toast Notifikasi Sukses
+Toast notification interaktif ketika warga berhasil mengirim aduan baru.
+![Toast Notifikasi](public/screenshots/notif.png)
 
-### 12. Profil Warga — Filter Status Laporan
-Warga dapat memfilter riwayat laporan berdasarkan status (**Semua**, **Pending**, **Diproses**, **Selesai**). Jika tidak ada laporan yang cocok, tampil pesan kosong dengan ikon informatif.
-![Profil Filter Status](public/screenshots/profil_filter_status.png)
+#### 11. Profil & Riwayat Laporan Warga
+Halaman profil warga yang menampilkan detail identitas beserta daftar riwayat pengaduan yang pernah dikirimkan.
+![Profil Warga](public/screenshots/profile.png)
 
-### 13. Dashboard Admin — Manajemen Laporan
-Pusat kendali admin untuk mengelola seluruh pengaduan warga. Tabel menampilkan tanggal, nama pelapor beserta NIK, judul aduan, foto bukti, badge status berwarna (**Ditinjau / Diproses / Selesai**), serta 3 tombol aksi: **Proses**, **Selesai**, dan **Hapus**.
-![Admin Dashboard Laporan](public/screenshots/laporan_dashboard_admin.png)
-
-### 14. Dashboard Admin — Filter Status Laporan
-Admin dapat memfilter laporan berdasarkan status menggunakan dropdown dan tombol **Filter** / **Reset**. Jika tidak ada laporan pada status yang dipilih, tampil pesan kosong.
-![Admin Dashboard Filter](public/screenshots/admin_dashboard_filter.png)
-
-### 15. Beranda — Statistik Laporan Warga (Live Data)
-Seksi statistik real-time di beranda menampilkan 4 kartu angka: **Total Laporan**, **Selesai**, **Diproses**, dan **Cakupan RW**. Data diperbarui otomatis sesuai kondisi database terkini.
-![Beranda Statistik](public/screenshots/beranda_statistik.png)
-
-### 16. Beranda — Panduan Cara Membuat Laporan
-Seksi tutorial yang menjelaskan 4 langkah mudah membuat laporan: Login Sistem → Isi Form Aduan → Upload Bukti → Kirim Laporan. Disajikan dalam tampilan kartu bergradasi yang bersih.
-![Beranda Tutorial](public/screenshots/beranda_tutorial.png)
-
-### 17. Beranda — Warta Terkini (Berita Kelurahan)
-Seksi berita menampilkan 3 artikel kegiatan terkini Kelurahan Joyotakan (Posyandu Remaja, Kerja Bakti Lingkungan, Pelatihan UMKM Digital) dengan foto, deskripsi singkat, dan tanggal publikasi.
-![Beranda Berita](public/screenshots/beranda_berita.png)
-
-### 18. Footer 
-Bagian Footer web yang berisikan maps kelurahan joyotakan, jam operasional kelurahan joyotakan, alamat kelurahan joyotakan dan informasi Kontak Kelurahan Joyotakan (nomor whatshap dan email). Serta terdapat juga link ke media sosial kelurahan joyotakan (instagram dan whatsapp).
+#### 12. Footer Website
+Footer lengkap dengan peta lokasi kelurahan, jam operasional, info kontak, serta tautan ke media sosial resmi kelurahan.
 ![Footer](public/screenshots/footer.png)
 
 ---
 
-## 🗄️ Rancangan Database (ERD Diagram)
+### 📱 Tampilan Mobile App (Responsive View)
 
-Aplikasi didukung oleh basis data relasional yang efisien. Relasi utama terjadi secara satu-ke-banyak (*One-to-Many*) antara tabel `users` dan `laporans`.
+Tampilan aplikasi ketika diakses melalui perangkat seluler (smartphone) dengan tata letak menu hamburger, layout ringkas, dan toast yang responsif.
 
-![Rancangan Database](public/screenshots/database_design.png)
+<table width="100%">
+  <tr>
+    <td width="50%" align="center">
+      <h4>1. Beranda Mobile</h4>
+      <img src="public/screenshots/mobile/berandamobile.png" alt="Beranda Mobile" width="100%"/>
+    </td>
+    <td width="50%" align="center">
+      <h4>2. Login Warga Mobile</h4>
+      <img src="public/screenshots/mobile/loginmobileuser.png" alt="Login Warga Mobile" width="100%"/>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">
+      <h4>3. Profil Warga Mobile</h4>
+      <img src="public/screenshots/mobile/profilemobile.png" alt="Profil Warga Mobile" width="100%"/>
+    </td>
+    <td width="50%" align="center">
+      <h4>4. Riwayat Laporan Mobile</h4>
+      <img src="public/screenshots/mobile/laporanuser.png" alt="Riwayat Laporan Mobile" width="100%"/>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">
+      <h4>5. Form Laporan Mobile</h4>
+      <img src="public/screenshots/mobile/formlaporanuser.png" alt="Form Laporan Mobile" width="100%"/>
+    </td>
+    <td width="50%" align="center">
+      <h4>6. Dashboard Admin Mobile</h4>
+      <img src="public/screenshots/mobile/dashboardadminuser.png" alt="Dashboard Admin Mobile" width="100%"/>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">
+      <h4>7. Side Panel Admin Mobile</h4>
+      <img src="public/screenshots/mobile/sidepaneladminmobile.png" alt="Side Panel Admin Mobile" width="100%"/>
+    </td>
+    <td width="50%" align="center">
+      <h4>8. Data Penduduk Mobile</h4>
+      <img src="public/screenshots/mobile/datapendudukmobile.png" alt="Data Penduduk Mobile" width="100%"/>
+    </td>
+  </tr>
+</table>
 
-### Detail Struktur Tabel:
+---
 
-#### 1. Tabel `users`
-Menampung data akun admin kelurahan serta data warga terdaftar.
-![DatabaseMySQLUsers](public/screenshots/databaseuser.png)
+### 🗄️ Rancangan & Struktur Database
 
-* `id` (Primary Key, Auto Increment)
-* `name` (string) - Nama lengkap warga / admin.
-* `email` (string, unique, nullable) - Alamat email opsional.
-* `nik` (string, unique, nullable) - NIK 16 digit untuk warga login.
-* `pin` (string, nullable) - PIN rahasia untuk admin login atau sinkronisasi data.
-* `rt` (string, 5) - Rukun Tetangga.
-* `rw` (string, 5) - Rukun Warga.
-* `role` (enum: `'admin'`, `'warga'`) - Peran pengguna dalam sistem.
-* `password` (string) - Hash password default.
-* `timestamps` (`created_at`, `updated_at`)
+Sistem ini didukung oleh basis data relasional dengan efisiensi relasi one-to-many antara tabel warga (`users`) dan pengaduan (`laporans`).
 
-#### 2. Tabel `laporans`
-Menampung seluruh pengaduan warga kelurahan.
-![DatabaseMySQLlaporan](public/screenshots/databaselaporan.png)
+#### 1. Entity Relationship Diagram (ERD) / Rancangan Database
+Rancangan tabel utama dan relasinya secara visual.
+![Rancangan Database](public/screenshots/database/database_design.png)
 
-*
-* `id` (Primary Key, Auto Increment)
-* `user_id` (Foreign Key, terhubung ke `users.id` dengan opsi *cascade on delete*) - Menunjukkan pembuat laporan.
-* `judul` (string) - Judul keluhan/masalah.
-* `lokasi` (string) - Alamat atau titik lokasi kejadian.
-* `description` (text) - Penjelasan detail kronologi keluhan.
-* `foto` (string, nullable) - Path lokasi foto bukti keluhan di server.
-* `status` (enum: `'pending'`, `'proses'`, `'selesai'`) - Status penanganan aduan.
-* `timestamps` (`created_at`, `updated_at`)
+#### 2. Detail Struktur Tabel `users`
+Menyimpan data akun admin kelurahan serta data warga terdaftar.
+![Struktur Tabel Users](public/screenshots/database/databaseuser.png)
+
+#### 3. Detail Struktur Tabel `laporans`
+Menyimpan seluruh pengaduan warga kelurahan beserta status penanganannya.
+![Struktur Tabel Laporans](public/screenshots/database/databaselaporan.png)
+
+#### 4. Detail Struktur / Indeks Tambahan
+Pratinjau detail struktur tabel dan indeks yang terdaftar pada database sistem.
+![Struktur Indeks](public/screenshots/database/Screenshot 2026-05-26 083258.png)
