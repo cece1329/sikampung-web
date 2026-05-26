@@ -24,6 +24,9 @@ class LaporanController extends Controller
     public function showLogin()
     {
         if (Auth::check()) {
+            if (Auth::user()->role === 'admin') {
+                return redirect()->route('admin.dashboard');
+            }
             return redirect('/');
         }
         // Mengarah ke resources/views/auth/login.blade.php
@@ -34,6 +37,9 @@ class LaporanController extends Controller
     public function showLoginAdmin()
     {
         if (Auth::check()) {
+            if (Auth::user()->role === 'admin') {
+                return redirect()->route('admin.dashboard');
+            }
             return redirect('/');
         }
         // Mengarah ke resources/views/admin/login.blade.php sesuai request kamu
@@ -156,7 +162,15 @@ class LaporanController extends Controller
         }
 
         $laporans = $query->get();
-        return view('laporan.admin', compact('laporans'));
+
+        // Statistik untuk dashboard
+        $totalLaporan = Laporan::count();
+        $totalPending = Laporan::where('status', 'pending')->count();
+        $totalProses = Laporan::where('status', 'proses')->count();
+        $totalSelesai = Laporan::where('status', 'selesai')->count();
+        $totalWarga = User::where('role', 'warga')->count();
+
+        return view('laporan.admin', compact('laporans', 'totalLaporan', 'totalPending', 'totalProses', 'totalSelesai', 'totalWarga'));
     }
 
     public function prosesLaporan($id)
@@ -184,9 +198,21 @@ class LaporanController extends Controller
         return redirect()->route('admin.dashboard');
     }
 
-    public function dataWarga()
+    public function dataWarga(Request $request)
     {
-        $wargas = User::where('role', 'warga')->get();
+        $query = User::where('role', 'warga');
+
+        if ($request->filled('search')) {
+            $search = $request->search;
+            $query->where(function($q) use ($search) {
+                $q->where('name', 'like', "%{$search}%")
+                  ->orWhere('nik', 'like', "%{$search}%")
+                  ->orWhere('rt', 'like', "%{$search}%")
+                  ->orWhere('rw', 'like', "%{$search}%");
+            });
+        }
+
+        $wargas = $query->latest()->get();
         return view('laporan.data_warga', compact('wargas'));
     }
 
@@ -209,7 +235,8 @@ class LaporanController extends Controller
             'password' => Hash::make($request->nik),
             'pin' => $request->nik,
         ]);
-        return redirect()->back();    }
+        return redirect()->back()->with('success', 'Data warga berhasil ditambahkan.');
+    }
 
     public function updateWarga(Request $request, $id)
     {
@@ -220,26 +247,24 @@ class LaporanController extends Controller
             'rw' => 'required|string|max:5',
         ]);
 
-        $user = User::where('role', 'warga')->findOrFail($id);
+        $user = User::where('id', $id)->where('role', 'warga')->firstOrFail();
 
-        $user->update([
-            'name' => $request->name,
-            'nik' => $request->nik,
-            'rt' => $request->rt,
-            'rw' => $request->rw,
-            // tetap pin = nik
-            'pin' => $request->nik,
-            'password' => Hash::make($request->nik),
-        ]);
+        $user->name = $request->name;
+        $user->nik = $request->nik;
+        $user->rt = $request->rt;
+        $user->rw = $request->rw;
+        $user->pin = $request->nik;
+        $user->password = Hash::make($request->nik);
+        $user->save();
 
-        return redirect()->route('admin.warga');
+        return redirect()->route('admin.warga')->with('success', 'Data warga berhasil diperbarui.');
     }
 
     public function destroyWarga($id)
     {
-        $user = User::where('role', 'warga')->findOrFail($id);
+        $user = User::where('id', $id)->where('role', 'warga')->firstOrFail();
         $user->delete();
 
-        return redirect()->route('admin.warga');
+        return redirect()->route('admin.warga')->with('success', 'Data warga berhasil dihapus.');
     }
 }
