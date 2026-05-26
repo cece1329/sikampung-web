@@ -1,5 +1,63 @@
 # 🏘️ SiKampung Joyotakan - Sistem Informasi & Pelayanan Warga
 
+# 🏘️ SiKampung Joyotakan - Sistem Informasi & Pelayanan Warga
+
+<!-- Tech Stack Badges -->
+<p align="center">
+  <img src="https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" alt="Laravel" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS" />
+  <img src="https://img.shields.io/badge/MySQL-00758F?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL" />
+  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js" />
+  <img src="https://img.shields.io/badge/Composer-885630?style=for-the-badge&logo=composer&logoColor=white" alt="Composer" />
+  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git" />
+</p>
+
+<p align="center">
+  <a href="#-fitur--kelebihan-web">Fitur Utama</a> •
+  <a href="#️-cara-menjalankan-aplikasi">Panduan Instalasi</a> •
+  <a href="#-panduan-login-pengguna-akun-demo">Akun Demo</a> •
+  <a href="#-sistem-manajemen">Sistem Manajemen</a> •
+  <a href="#-screenshot-halaman-aplikasi">Antarmuka</a> •
+  <a href="#-rancangan-database-erd-diagram">Struktur Database</a>
+</p>
+
+---
+
+**SiKampung Joyotakan** adalah platform digital berbasis web yang dirancang khusus untuk memfasilitasi pelaporan keluhan warga serta manajemen data kependudukan secara efisien di Kelurahan Joyotakan. Sistem ini mempertemukan warga secara langsung dengan jajaran admin kelurahan untuk mempercepat penanganan masalah lingkungan, sosial, maupun infrastruktur.
+
+---
+
+## ✨ Fitur & Kelebihan Web
+
+Sistem Informasi SiKampung didesain dengan prinsip kemudahan penggunaan (*user-friendly*) serta tampilan yang premium dan responsif:
+
+1. **Autentikasi Praktis Tanpa Ribet**:
+   * **Warga**: Cukup masuk menggunakan 16-digit **NIK (Nomor Induk Kependudukan)** tanpa perlu mengingat password rumit.
+   * **Admin**: Masuk secara cepat menggunakan **PIN** rahasia yang aman.
+2. **Statistik Real-time**: Beranda menampilkan statistik terkini laporan warga (Total Laporan, Laporan Diproses, dan Laporan Selesai).
+3. **Form Pengaduan Interaktif**: Pengaduan dilengkapi dengan judul, lokasi, deskripsi rinci, serta lampiran foto bukti.
+4. **Pencarian & Validasi Pintar**: Baik warga maupun admin dapat melakukan pencarian laporan dan memfilter laporan berdasarkan status (Semua, Pending, Proses, Selesai).
+5. **Manajemen Akun Warga Terpadu (CRUD)**: Admin memiliki kendali penuh untuk menambah, mengedit (secara inline tanpa pindah halaman), serta menghapus akun warga secara instan.
+6. **Desain Modern & Responsif**: Menggunakan Tailwind CSS dengan ornamen batik modern khas Nusantara, navigasi menu hamburger pada tampilan ponsel, serta dialog/toast interaktif yang memanjakan mata.
+
+---
+
+## 🛠️ Cara Menjalankan Aplikasi
+
+Ikuti panduan langkah demi langkah di bawah ini untuk menjalankan platform di komputer lokal Anda:
+
+### Prerequisites (Prasyarat)
+* **Laragon** atau **XAMPP** (PHP >= 8.2 & MySQL)
+* **Composer**
+* **Node.js & NPM**
+
+### Langkah Instalasi
+
+1. **Clone & Masuk ke Folder Project**:
+```bash
+   git clone [https://github.com/cece1329/sikampung-web.git](https://github.com/cece1329/sikampung-web.git)
+   cd sikampung
+
 **SiKampung Joyotakan** adalah platform digital berbasis web yang dirancang khusus untuk memfasilitasi pelaporan keluhan warga serta manajemen data kependudukan secara efisien di Kelurahan Joyotakan. Sistem ini mempertemukan warga secara langsung dengan jajaran admin kelurahan untuk mempercepat penanganan masalah lingkungan, sosial, maupun infrastruktur.
 
 ---
